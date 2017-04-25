@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>loading tip</title>
+    <link rel="stylesheet" href="//pui.pandawork.net/resources/css/reset.css">
+    <script src="../site-config.js"></script>
+    <script src="//pui.pandawork.net/resources/js/base/lib/kissy/seed.js"></script>
+    <style>
+        .container{
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="J_cn">
+        <select name="" id="">
+            <option value="">test</option>
+            <option value="">test1</option>
+            <option value="">test2</option>
+        </select>
+    </div>
+    
+    <button id="J_btn1">在div内展示loading tip</button>
+    <button id="J_btn2">遮罩整个页面</button>
+
+    <script>
+    KISSY.use('mod/loading-tip', function(S){
+        S.ready(function(){
+            var
+                $ = S.all,
+                ldt1 = PW.mod.LoadingTip({
+                    renderTo: '',
+                    hint: '在内部提示中……'
+                });
+
+            $('#J_btn1').on('click', function(){
+                PW.mod.Overlay({
+                    renderTo: ''
+                }).show()
+            })
+        });
+    })
+    </script>
+</body>
+</html>

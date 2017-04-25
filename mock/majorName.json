@@ -1,0 +1,16 @@
+{
+	"code": 0,
+	"data": [
+		{"majorCode":1,"majorName":"环境工程"},
+		{"majorCode":2,"majorName":"软件工程"},
+        {"majorCode":3,"majorName":"通信1工程"},
+        {"majorCode":3,"majorName":"通信2工程"},
+        {"majorCode":3,"majorName":"通信3工程"},
+        {"majorCode":3,"majorName":"通信4工程"},
+        {"majorCode":3,"majorName":"通信5工程"},
+        {"majorCode":3,"majorName":"通信6工程"},
+		{"majorCode":3,"majorName":"通信7工程"},
+		{"majorCode":4,"majorName":"电子商务"},
+		{"majorCode":5,"majorName":"其他"}
+	]
+}

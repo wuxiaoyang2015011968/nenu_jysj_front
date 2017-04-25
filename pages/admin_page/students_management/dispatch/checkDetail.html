@@ -1,0 +1,137 @@
+<!-- 管理员的派遣查看详情页 廖月云 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>查看详情</title>
+	<!--#include file="/nenu_jysj_front/pages/common/link.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/script.html"  -->
+	<link rel="stylesheet" type="text/css" href="../../../../resources/css/common/detail.css">
+</head>
+<body>
+	<div class="page">
+		<!--#include file="/nenu_jysj_front/pages/common/header.html"  -->
+		<!--#include file="/nenu_jysj_front/pages/common/Asidebar.html"  -->
+		<script type="text/javascript">
+		    KISSY.use('module/sidebar',function(S){
+		        S.ready(function(){
+		            PW.module.Sidebar();
+		        });
+		    });
+		</script>	
+		<div class="content">
+			<div class="infomation">
+				<table>
+					<caption>
+						<span>XX</span>派遣签约信息表
+						<br/>
+						协议编号：<span>XXXXXXXXXX</span>
+					</caption>
+					<tr>
+						<td>毕业去向</td>
+						<td></td>
+						<td>签约单位名称</td>
+						<td>xxx</td>
+						<td>单位组织机构代码</td>
+						<td></td>
+						<td>单位所在地</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>单位性质</td>
+						<td></td>
+						<td>单位行业</td>
+						<td>xxx</td>
+						<td>单位隶属部门</td>
+						<td></td>
+						<td>工作职位类别</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>报道证签发类别</td>
+						<td></td>
+						<td>报到证迁往单位名称</td>
+						<td>xxx</td>
+						<td>报到证迁往单位算在地</td>
+						<td></td>
+						<td>档案转寄单位名称</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>档案转寄单位地址</td>
+						<td></td>
+						<td>档案转寄单位邮编</td>
+						<td>xxx</td>
+						<td>是否接受户口</td>
+						<td></td>
+						<td>是否接受档案</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>户口签转地</td>
+						<td></td>
+						<td>档案接收部门</td>
+						<td>xxx</td>
+						<td>档案接收联系人</td>
+						<td></td>
+						<td>档案接收联系人电话</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>单位联系人</td>
+						<td></td>
+						<td>联系人电话</td>
+						<td>xxx</td>
+						<td>联系人手机号码</td>
+						<td></td>
+						<td>联系人电子邮箱</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>联系人传真</td>
+						<td></td>
+						<td>单位地址</td>
+						<td>xxx</td>
+						<td>单位邮编</td>
+						<td></td>
+						<td>备注</td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<div class="material clearfix">	
+				<strong class="material-show">材料展示</strong>
+				<ul class="material-pic clearfix">
+					<li>
+						<img src="../../../../resources/img/admin_page/business_handling/pic_show1.jpg">
+						<span>吃的呢吃的呢吃的呢吃的呢</span>
+					</li>
+					<li>
+						<img src="../../../../resources/img/admin_page/business_handling/pic_show2.jpg">
+						<span>吃的呢吃的呢吃的呢吃的呢</span>
+					</li>
+					<li>
+						<img src="../../../../resources/img/admin_page/business_handling/pic_show3.jpg">
+						<span>吃的呢吃的呢吃的呢吃的呢</span>
+					</li>
+				</ul>
+			</div>
+			<div class="confirm">
+				<a href="javascript:;">返回修改</a>
+				<a href="javascript:;">确认提交</a>
+			</div>
+			<div class="pop-pic">
+				<img src="">
+				<a href="javascript:;">关闭</a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		KISSY.use('page/admin_page/students_management/dispatch/checkDetail',function(S){
+			S.ready(function(){
+				PW.page.admin_page.students_management.dispatch.checkDetail();
+			})
+		}) 
+	</script>
+</body>
+</html> 

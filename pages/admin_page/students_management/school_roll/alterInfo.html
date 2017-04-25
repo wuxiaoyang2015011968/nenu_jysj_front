@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>修改学籍信息</title>
+	<!--#include file="/nenu_jysj_front/pages/common/link.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/script.html"  -->
+	<link rel="stylesheet" type="text/css" href="../../../../resources/css/common/school_roll_common.css">
+	<link rel="stylesheet" href="../../../../resources/upload/css/zyupload-1.0.0.css " type="text/css">
+	<script type="text/javascript" src="../../../../resources/upload/js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="../../../../resources/upload/js/zyupload-1.0.0.js"></script>
+	<script type="text/javascript" src="../../../../resources/js/module/dispatch/del.js"></script>
+
+</head>
+<body>
+	<!--#include file="/nenu_jysj_front/pages/common/header.html"  -->
+	<div class="container">
+		<!--#include file="/nenu_jysj_front/pages/common/Asidebar.html"  -->
+		<script type="text/javascript">
+		    KISSY.use('module/sidebar',function(S){
+		        S.ready(function(){
+		            PW.module.Sidebar();
+		        });
+		    });
+		</script>
+		<div class="content">
+			<div class="remind">
+			</div>
+			<form class="main_form" action="#" method="post" name="admin_alter_form">
+				<input type="text" name="id" value="id" class="none"/>
+				<h2>基本信息</h2>
+				<div class="summary clearfix">
+					<div class="clearfix">
+						<label class="must matter">姓名：</label>
+						<input type="text" name="name" class="J_name J_notNull" value="" />
+						<p class="J_name_error">请输入正确的格式</p>
+					</div>
+					<div class="clearfix">
+						<label class="must matter">身份证号：</label>
+						<input type="text" name="idNumber" class="J_id J_notNull" value="" />
+						<p class="J_id_error">请输入正确的身份证号</p>
+					</div>
+					<div class="clearfix">
+						<label class="must matter">考生号：</label>
+						<input type="text" name="candidateNumber" class="J_examNo J_notNull" value="" />
+						<p class="J_examNo_error">请输入正确的考生号</p>
+					</div>
+
+					<div>
+						<label class="must matter">学号：</label>
+						<input type="text" name="studentNumber" value="" class="J_stuNum J_notNull" />
+						<p class="J_stuNum_error">请输入正确的学号</p>	
+					</div>	
+					<div class="change-sex">
+						<label class="must matter">性别：</label>
+						<input type="radio" name="sex" id="male" checked /><label for="male">男</label>
+						<input type="radio" name="sex" id="female" /><label for="female">女</label>
+					</div>
+					<div>
+						<label class="must matter">民族：</label>
+						<select class="J_notOption" name="nationCode" autocomplete="off">
+							<option value="-1">请选择</option>
+							<option value="1">汉族</option>
+							<option value="2">满族</option>
+						</select>
+					</div>
+					<div>
+						<label class="must matter">政治面貌：</label>
+						<select class="J_notOption" name="politicalStandCode" autocomplete="off">
+							<option value="-1">请选择</option>
+							<option value="1">党员</option>
+						</select>
+					</div>
+					<div class="college-name">
+						<label class="must matter">院校名称：</label>
+						<span class="must">东北师范大学</span>
+					</div>
+					<div>
+						<label class="matter">学制：</label>
+						<select name="stuLength" autocomplete="off">
+							<option value="-1">请选择</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select>
+					</div>
+					<div>
+						<label class="must matter">学历：</label>
+						<select class="J_notOption" name="qualificationCode" autocomplete="off">
+							<option value="-1">请选择</option>
+							<option value="1" name="undergraduate">本科生毕业</option>
+							<option value="2" name="postgraduate">硕士生毕业</option>
+							<option value="3" name="doctor">博士生毕业</option>
+						</select>
+					</div>
+					<div>
+						<label class="must matter">所在院系/分院：</label>
+						<select class="J_notOption" name="collegeCode" autocomplete="off">
+							<option value="-1">请选择</option>
+							<option value="1">软件学院</option>
+						</select>
+					</div>
+					<div>
+						<label class="must matter">所在年级：</label>
+						<select class="J_notOption" name="grade" autocomplete="off">
+							<option value="-1">请选择</option>
+							<option value="1">2014</option>
+						</select>
+					</div>
+					<span class="major-name">
+						<label class="must no-matter">专业名称：</label>
+						<select class="J_qualification J_notOption" autocomplete="off">
+							<option value="-1">请选择</option>
+							<option value="1">本科生专业</option>
+							<option value="2">研究生专业</option>
+						</select>
+						<label>------</label>
+						<select class="J_majorClass J_notOption" autocomplete="off">
+							<option value="-1">请选择专业大类</option>
+						</select>
+						<label>------</label>
+						<select class="J_majorMinorClass J_notOption" autocomplete="off">
+							<option value="-1">请选择专业中类</option>
+						</select>
+						<label>------</label>
+						<select name="majorCode" class="J_majorName J_notOption" autocomplete="off">
+							<option value="-1">请选择专业</option>
+						</select>
+					</span>
+					<div class="where">
+						<label class="must matter">拟毕业去向：</label>
+						<select class="J_notOption" name="intendWhereaboutsCode" autocomplete="off">
+							<option value="-1">请选择</option>
+							<option value="1" name="jy">签约就业</option>
+							<option value="2" name="ky">考研/博</option>
+							<option value="3" name="by">保研/博</option>
+							<option value="4" name="by">自主创业</option>
+							<option value="5" name="by">自由职业</option>
+							<option value="6" name="by">待就业</option>
+							<option value="7" name="by">不就业拟升学</option>
+							<option value="8" name="by">其他暂不就业</option>
+						</select>
+					</div>
+					<div class="other-major">
+						<label class="must matter">请填写专业名称：</label>
+						<input type="text" name="otherMajor" disabled="true" />
+					</div>
+					<div class="other-major"></div>
+					<div class="other-major"></div>
+					<div class="other-major"></div>
+
+					<div class="kind">
+						<label class="must matter">困难生类别：</label>
+						<select name="difficultyCode" class="kind J_notOption" autocomplete="off">
+							<option value="-1">请选择</option>
+							<option value="1" name="no">非困难生</option>
+							<option value="2" name="normal">一般资助对象</option>
+							<option value="3" name="emphasis">重点资助对象</option>
+							<option value="4" name="especially">特别资助对象</option>
+						</select>
+					</div>
+					 <div class="clearfix">
+						<label class="must matter">师范生类别：</label>
+						<select class="clickShow selectClass none" name="normalStuCode" disabled="true">
+							<option value="-1">请选择</option>
+							<option value="1">公费师范生</option>
+							<option value="2">普通师范生</option>
+							<option value="3">非师范生</option>
+						</select>
+						<span>免费师范生</span>
+						<em class="alter J_alter J_alterClass">修改</em>
+					</div>
+					
+					<div class="clearfix">
+						<label class="must matter">生源所在地：</label>
+						<input class="area-id-local" type="hidden" name="areaId">
+						<input type="text" name="originPlace" autocomplete="off" class="clickShow none J_areaHolder J_notNull" id="J_localAreaHolder"/>
+						<ul class="none areaFidle" id="J_areaFidle_local"></ul>
+						<span>吉林省长春市</span>
+						<em class="alter J_alter J_alterLocal">修改</em>
+						<p class="localTip"></p>
+					</div>
+					<div class="clearfix">
+						<label class="must matter">地区代码：</label>
+						<input type="text" name="originPlaceCode" class="local-code J_local_code" onfocus="this.blur()" value="222222" autocomplete="off" />
+					</div>
+					<div class="clearfix">
+						<label class="must matter">培养方式：</label>
+						<select name="trainingModeCode" class="clickShow selectWay none" disabled="true">
+							<option value='-1'>请选择</option>
+							<option value='1'>非定向</option>
+							<option value='2'>定向</option>
+							<option value='3'>自筹</option>
+							<option value='4'>委培</option>
+							<option value='5'>在职</option>
+						</select>
+						<span class="train-way">定向</span>
+						<em class="alter J_alter J_alterWay">修改</em>
+					</div>
+					<div class="train-unit J_orientation clearfix">
+						<label class="must matter">定向/委培单位：</label>
+						<input type="text" name="weipeiUnit" class="clickShow unit none J_notNull" disabled="true" />
+						<span>东北师范大学</span>
+						<em class="alter J_alter J_alterUnit">修改</em>
+					</div>
+					<div class="unit-addr J_orientation">
+						<label class="must matter">定向/委培单位地址：</label>
+						<input class="area-id-unit" type="hidden" name="areaId">
+						<input id="J_unitAreaHolder" name="weipeiUnitPlace" class="J_areaHolder J_notNull" type="text" autocomplete="off" />
+						<ul class="none areaFidle" id="J_areaFidle_unit"></ul>
+						<p class="unitTip"></p>
+					</div>
+					<div class="clearfix J_orientation">
+						<label class="must matter">地区代码：</label>
+						<input type="text" class="unit-code J_unit_code" onfocus="this.blur()" name="weipeiUnitPlaceCode"  autocomplete="off" />
+					</div> 
+				</div>
+				
+				<h2>入学信息</h2>
+				<div class="summary clearfix">
+					<div>
+						<label class="must matter">入学日期：</label>
+						<input class="J_date J_notNull" type="text" name="registDate" />
+					</div>
+					<div>
+						<label class="must matter">毕业日期：</label>
+						<input class="J_date J_notNull" type="text" name="graduationDate" />
+					</div>
+					<div>
+						<label class="matter">入学前户口所在地：</label><input type="text"  name="preHukouLocation" />
+					</div>
+					<div class="residence">
+						<label class="matter">户口是否转入学校：</label>
+						<input type="radio" name="isHukouIntoSchool" value="1" id="already" checked /><label for="already">是</label>
+						<input type="radio" name="isHukouIntoSchool" value="0" id="without" /><label for="without">否</label>
+					</div>
+					<div>
+						<label class="matter">入学前档所在单位：</label><input type="text" name="preArchiveLocation" />
+					</div>
+					<div class="record-file">
+						<label class="matter">档案是否转入学校：</label>
+						<input type="radio" name="isArchiveIntoSchool" value="1" id="yes" checked /><label for="yes">是</label>
+						<input type="radio" name="isArchiveIntoSchool" value="0" id="no" /><label for="no">否</label>
+					</div>
+				</div>
+				<h2>联系方式</h2>
+				<div class="summary clearfix">
+					<div>
+						<label class="must matter">手机号码：</label>
+						<input type="text" name="cellphone" class="J_phone J_notNull" />
+						<p class="J_phone_error">请输入正确的格式</p>	
+					</div>
+					<div>
+						<label class="matter">手机号码（备用）：</label>
+						<input type="text" name="cellphoneBak" />
+					</div>
+					<div>
+						<label class="must matter">QQ号码：</label>
+						<input type="text" name="qq" class="j_QQNum J_notNull" />
+						<p class="J_QQNum_error">请输入正确的格式</p>	
+					</div>
+					<div>
+						<label class="must matter">常用电子邮箱：</label>
+						<input type="text" name="email" class="J_email J_notNull" />
+						<p class="J_email_error">请输入正确的电子邮箱格式</p>	
+					</div>
+					<div>
+						<label class="matter">家庭电话：</label>
+						<input type="text" name="homePhone" class="J_homePhone J_notNull" />
+						<a class="phone-hint J_hint J_phone_hint" href="javascript:;">提示</a>
+						<p class="J_homePhone_error">格式为"区号-号码"或手机号</p>	
+					</div>
+					
+					<div>
+						<label class="must matter">紧急联系人电话：</label>
+						<input type="text" name="relativePhone" />
+					</div>
+					<div>
+						<label class="matter">微信号：</label>
+						<input type="text" name="weixin"/>
+					</div>
+					<div>
+						<label class="must matter">家庭住址：</label>
+						<input type="text" name="homeAddress" class="J_address J_notNull" />
+						<p class="J_address_error">请输入正确的格式</p>	
+					</div>
+					
+					<div>
+						<label class="matter">寝室楼：</label>
+						<input type="text" name="dormitory" />
+					</div>
+					<div>
+						<label class="matter">寝室号：</label>
+						<input type="text" name="dormitoryNum" />
+					</div>
+				</div>
+			
+				
+				
+				<h2>材料信息</h2>
+					<ul class="clearfix material">
+						<li>
+							<img src="../../../../resources/img/student_page/school_roll/师范生类别材料.jpg" alt="师范生类别材料.jpg" data-id="" class="J_thumbnail uploaded-img" />
+							<input type="text" style="display:none;width:136px;">
+							<a href="javascript:;" class="delete"></a>
+						</li>
+						<li>
+							<img src="../../../../resources/img/student_page/school_roll/生源地材料.jpg" alt="生源地材料.jpg" class="J_thumbnail uploaded-img"/>
+							<input type="text" style="display:none;width:136px;">
+							<a href="javascript:;" class="delete"></a>
+						</li>
+					</ul>	
+				<!-- 材料信息表单start -->		
+					<div class="clearfix">
+						<div id="zyupload" class="zyupload"></div> 
+					</div>
+					<!-- 材料信息表单end -->
+				<div class="btnbox">
+					<!-- <input type="button" class="save J_save" value="保存" /> -->
+					<input type="submit" class="submit-complete-form" value="下一步" />
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	
+	<div class="pop-pic none J_pop_pic">
+		<img src=""/>
+		<a href="javascript:;" class="J_shut">关闭</a>
+	</div>
+	<div class="scene none"></div>
+	<div class="delete-box  none">
+		<div class="delete-info clearfix">
+			<p>确认要删除此图片吗？</p>
+			<span class="close">X</span>
+		</div>
+		<span class="close-button confirm">确认</span>						
+		<span class="close-button close">取消</span>
+	</div>
+	<script type="text/javascript">
+		KISSY.use('page/admin_page/students_management/school_roll/alterInfo',function(S){
+			S.ready(function(){
+				PW.page.admin_page.students_management.school_roll.alterInfo();
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$(function(){
+			// 初始化插件
+			$("#zyupload").zyUpload({
+				width            :   "100%",                 // 宽度
+				height           :   "350px",                 // 宽度
+				itemWidth        :   "140px",                 // 文件项的宽度
+				itemHeight       :   "115px",                 // 文件项的高度
+				url              :   "/upload/UploadAction",  // 上传文件的路径
+				fileType         :   ["jpg","png","jpeg","bmp"],// 上传文件的类型
+				fileSize         :   5120000,                // 上传文件的大小
+				multiple         :   true,                    // 是否可以多个文件上传
+				dragDrop         :   true,                    // 是否可以拖动上传文件
+				tailor           :   true,                    // 是否可以裁剪图片
+				del              :   true,                    // 是否可以删除文件
+				finishDel        :   false,  				  // 是否在上传文件完成后删除预览
+				/* 外部获得的回调接口 */
+				onSelect: function(selectFiles, allFiles){    // 选择文件的回调方法  selectFile:当前选中的文件  allFiles:还没上传的全部文件
+					console.info("当前选择了以下文件：");
+					console.info(selectFiles);
+				},
+				onDelete: function(file, files){              // 删除一个文件的回调方法 file:当前删除的文件  files:删除之后的文件
+					console.info("当前删除了此文件：");
+					console.info(file.name);
+				},
+				onSuccess: function(file, response){          // 文件上传成功的回调方法
+					console.info("此文件上传成功：");
+					console.info(file.name);
+					console.info("此文件上传到服务器地址：");
+					console.info(response);
+					$("#uploadInf").append("<p>上传成功，文件地址是：" + response + "</p>");
+				},
+				onFailure: function(file, response){          // 文件上传失败的回调方法
+					console.info("此文件上传失败：");
+					console.info(file.name);
+				},
+				onComplete: function(response){           	  // 上传完成的回调方法
+					console.info("文件上传完成");
+					console.info(response);
+				}
+			});
+			
+		});
+	</script>
+	
+		
+	<!--电话提示-->
+	<div class="hint-box J_change none">
+		<div class="hint clearfix">提示信息
+			<span class="J_close">X</span>
+		</div>
+		<div class="J_msg_box msg-box">
+			<p class="J_msg"></p>
+			<p class="J_doc_hint"></p>
+			<p class="J_hint1"></p>
+			<p class="J_hint2"></p>
+		</div>
+		
+		<span class="close-btn J_close">关闭</span>
+	</div>
+	<div class="pop-pic none J_pop_pic">
+		<img src=""/>
+		<a href="javascript:;" class="J_shut">关闭</a>
+	</div>
+	<script type="text/javascript">
+		KISSY.use('page/student_page/school_roll/alterInfo',function(S){
+			S.ready(function(){
+				PW.page.student_page.school_roll.alterInfo();
+			});
+		});
+	</script>
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

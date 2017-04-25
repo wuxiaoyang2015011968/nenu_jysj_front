@@ -1,0 +1,165 @@
+<!--黎星宇 业务受理 变更业务 HTML-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>业务受理--变更业务</title>
+	<!--#include file="/nenu_jysj_front/pages/common/link.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/script.html"  -->
+	<link rel="stylesheet" type="text/css" href="/nenu_jysj_front/resources/css/page/admin_page/business_handling/protocolList.css">
+	
+</head>
+<body>
+	<!--#include file="/nenu_jysj_front/pages/common/header.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/Asidebar.html"  -->
+	<script type="text/javascript">
+	    KISSY.use('module/sidebar',function(S){
+	        S.ready(function(){
+	            PW.module.Sidebar();
+	        });
+	    });
+	</script>
+	<div class="content">
+		<div class="remind"></div>
+		<div class="stu_query">
+			<h2 class="query_name">查询条件</h2>
+			<div  class="query_selects clearfix">
+			    <div class="each_query">
+					<span class="query_text">提交时间</span>
+					<input class="J_date" type="text" name="enterDate" id="beginTime" />
+					<input class="J_date" type="text" name="enterDate" id="endTime"/>
+				</div>
+				<div class="each_query">
+					<span class="query_text">关键字</span>
+					<input type="text" value="学号或姓名" class="keyword_input" id="keyWord" />
+				</div>
+				<div class="each_query">
+					<span class="query_text">审核状态</span>
+					<select class="query_select" id="checkChangeResult">
+						<option value="-1">请选择</option>
+						<option value="">已审核</option>
+						<option value="">审核未通过</option>
+						<option value="">未审核</option>
+					</select>
+				</div>
+			    <div class="each_query">
+					<span class="query_text">变更类型</span>
+					<select class="query_select" id="changeType">
+					    <option value="-1">请选择</option>
+						<option value="">定向解约</option>
+						<option value="">委培解约</option>
+						<option value="">免师解约</option>
+						<option value="">免师跨省</option>
+					</select>
+				</div>
+				<input type="button" value="查询" class="query btn" id="querybtn" />
+			</div>
+		</div>
+		<div class="query_result">
+			<table>
+				<thead>
+				    <th>序号</th>
+				    <th style="display:none;">数据库ID</th>
+				    <th>姓名</th>
+				    <th>学号</th>
+				    <th>变更类型</th>
+				    <th>学生提交时间</th>
+				    <th>学校审核</th>
+				    <th>审核时间</th>
+				    <th>操作</th>
+				</thead>
+				<tbody id="J_template">
+					
+				</tbody>
+			</table>
+			<div id="J_pagination">
+				<!-- <a href="javascript:;">上一页</a>
+				<a href="javascript:;" class="active">1</a>
+				<a href="javascript:;">2</a>
+				<a href="javascript:;">3</a>
+				<a href="javascript:;">4</a>
+				<a href="javascript:;">5</a>
+				<a href="javascript:;">下一页</a>
+				<span class="show_page">1/5</span> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<script id="query-protocolList" type="text/template">
+	{@each data as protocolList}
+		<tr>
+		    <td class="stuorder">&{protocolList.studentOrder}</td>
+		    <td style="display:none;" class="stuId">&{protocolList.statusInfoId}</td>
+			<td>&{protocolList.name}</td>
+			<td>&{protocolList.studentNumber}</td>
+			<td>&{protocolList.changeType}</td>
+			<td>&{protocolList.createdTime}</td>
+			<td>&{protocolList.checkChangeResult}</td>
+			<td>&{protocolList.lastModifiedTime}
+			</td>
+			<td>
+				<a href="javascript:;" class="view">查看</a>
+			</td>
+		</tr>
+	{@/each}
+	</script>
+	<script type="text/javascript">
+		KISSY.use('page/admin_page/business_handling/changeList', function(S) {
+			var urls = PW.Env.url.admin_page.business_handling.changeList;
+			var url = urls.showChangeList;//传出来的数据
+			//console.log(url);
+			S.ready(function(){
+				PW.page.admin_page.business_handling.changeList({
+					renderTo: '#J_pagination', //分页显示指向
+					juicerRender: '#query-protocolList', //模板渲染
+					dataRender: '#J_template', //模板的数据放的地方
+					pageSize:4,//每页显示的记录数
+					url: url,
+					/*发送ajax,必须指定ajax的url */
+					configUrl:function(url,page,me,prevdata){
+						 /*var url = url + '/' + page;*/
+                            return url;
+                            // return url + page;
+                    },
+                    afterDataLoad:function(that,data,page) {
+                    	S.log(data.dataCount);
+                    },
+					type: 'get'
+				});
+				console.log("ajaxing");
+
+			});
+		});
+	</script>
+	<script type="text/javascript">
+        window.onload = function(){
+        	function getElementsClass(classnames){ 
+				var classobj= new Array();//定义数组 		 
+				var classint=0;//定义数组的下标 		 
+				var tags=document.getElementsByTagName("*");//获取HTML的所有标签 
+				 
+				for(var i in tags){//对标签进行遍历 
+				 
+				    if(tags[i].nodeType==1){//判断节点类型 
+				 
+				        if(tags[i].getAttribute("class") == classnames)//判断和需要CLASS名字相同的，并组成一个数组 		 
+				        { 	 
+							classobj[classint]=tags[i];  
+							classint++; 		 
+						} 		 
+					
+					} 
+				 
+				} 		 
+				return classobj;//返回组成的数组 		 
+			}
+
+			var stuOrder = getElementsClass("stuorder");
+			for (var i = 0; i < stuOrder.length; i++) {
+				var j = i+1;
+				stuOrder[i].innerHTML = j;
+			};
+        }
+	</script>
+</body>
+</html>

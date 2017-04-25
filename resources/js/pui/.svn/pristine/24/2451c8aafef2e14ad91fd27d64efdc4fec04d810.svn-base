@@ -1,0 +1,158 @@
+/*-----------------------------------------------------------------------------
+* @Description: 提供api页面的公共部分 (api.css)
+* @Version: 	V1.0.0
+* @author: 		simon(406400939@qq.com)
+* @date			2013.05.09
+* ==NOTES:=============================================
+* v1.0.0(2013.05.09):
+* 	初始生成 
+* ---------------------------------------------------------------------------*/
+
+
+body{
+	color: #333;
+	font-size: 14px;
+	font-family: "微软雅黑";
+}
+a{
+	color: #214FA3;
+}
+em.attr{
+	margin: 0 3px;
+	border: 1px solid #E1E1E8;
+	border-radius: 4px;
+	padding: 2px 4px;
+	color: #DD1144;
+}
+em.tag{
+	margin: 0 3px;
+	border: 1px solid #E1E1E8;
+	border-radius: 4px;
+	padding: 2px 4px;
+	color: teal;
+}
+.notice{	display: block;
+
+	font-family: "楷体";
+}
+ol{
+	list-style: lower-roman inside;
+}
+.out-link{
+	padding-right: 13px;
+	background: url(../img/external.png) right top no-repeat;
+}
+.page{
+	padding-top: 100px;
+	padding-bottom: 40px;
+}
+.content{
+	width: 960px;
+	margin: 0 auto;
+    padding: 20px 30px;
+    background: #fff;
+}
+.api-list{
+	list-style:inside decimal;
+}
+.desc{
+	text-indent: 2em;
+}
+.level-emphasize{
+	padding-left: 1em;
+}
+h1{
+	margin: 0 auto;
+	font-size: 20px;
+	font-family: '黑体';
+	text-align: center;
+	line-height: 45px;
+}
+h2{
+	color: #3399CC;
+	font-size: 18px;
+	line-height: 40px;
+}
+h3{
+	color: #CC3399;
+	font-size: 14px;
+	line-height: 30px;
+}
+h4{
+	font-size: 13px;
+	line-height: 25px;
+}
+
+table{
+	width: 90%;
+	margin: 10px auto;
+}
+th{
+	color: #9BBB59;
+	text-align: left;
+}
+tr{
+	border-bottom: 1px solid #9BBB59;
+}
+td{
+	padding-right: 10px;
+}
+tbody tr:nth-child(odd){
+	background: #E6EED5;
+	line-height: 25px;
+}
+tbody tr td:first-child{
+	font-weight: bolder;
+}
+tbody tr td{
+	padding: 5px 0;
+	line-height: 20px;
+}
+
+
+.code-block{
+	margin: 10px auto;
+}
+.code-block .code-area{
+	display: none;
+	/*background-color: whiteSmoke;*/
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    margin-bottom: 20px;
+    min-height: 20px;
+    padding: 10px;
+}
+/*控制台*/
+.console-wrapper{
+	position: relative;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+	padding: 25px 10px 10px;
+	background-color: whiteSmoke;
+}
+.console-wrapper .trigger{
+	display: block;
+	position: absolute;
+	right: 10px;
+	top: 0;
+	height: 25px;
+}
+.console-wrapper .console{
+}
+.console-wrapper p{
+	border-bottom: 1px solid #bbb;
+	line-height: 35px;
+}
+.key{
+	display: inline-block;
+	width: 50px;
+	font-weight: bolder;
+}
+
+.footer{
+	margin-top: 20px;
+	text-align: center;
+	color: #666;
+}

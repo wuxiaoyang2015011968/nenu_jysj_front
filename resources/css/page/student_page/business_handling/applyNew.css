@@ -1,0 +1,40 @@
+.applyTotal{
+	min-height: 600px;
+	margin-left: 192px;
+	background: none repeat scroll 0 0;
+}
+.protocol{
+	min-height: 500px;
+	margin-top: 100px;
+	background: none repeat scroll 0 0; 
+}
+.applyRea{
+	width: 65%;
+	height: 100px;
+	margin-left: 365px;
+}
+.applyRea span{
+	padding-left: 83px;
+	font-size: 14px;
+	line-height: 32px;
+	margin-right: 150px;
+}
+.mistake{
+	margin-left: -83px;
+}
+.updateInfo{
+	margin-top: 40px;
+}
+.resub span{
+	color: red;
+	font-size: 24px;
+	margin-left: 400px;
+}
+.applyIn{
+	margin-top: 258px;
+	height: 35px;
+    width: 140px;
+    background: rgb(111, 179, 224) none repeat scroll 0 0;
+    border: 0 none;
+    color: #fff;
+}

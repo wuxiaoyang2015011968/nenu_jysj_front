@@ -1,0 +1,58 @@
+KISSY.add('io/student_page/login/stuLogin',function(S){
+	var urls;
+	try {
+		urls = PW.Env.url.student_page.login.stuLogin;
+	}catch(e){
+		S.log("地址信息错误");
+		return;
+	}
+	PW.namespace('io.student_page.login.stuLogin');
+
+	S.mix(PW.io.student_page.login.stuLogin,{
+		conn:urls,
+		isModifySuc:function(data,callback){
+			 S.IO({
+	                url:urls.isModifySuc,
+	                type:'get',
+	                data:data,
+	                dataType:'json',
+	                success:function(rs){
+	                    callback(
+	                        rs.code,
+	                        rs.data,
+	                        rs.errMsg
+	                        );
+	                },
+	                error:function(rs){
+	                    callback(
+	                        false,
+	                        null,
+	                        PW.Eng.msg[0]
+	                    );
+	                }
+	            });    
+            },
+          	isNewPassword:function(data,callback){
+			 S.IO({
+	                url:urls.isNewPassword,
+	                type:'get',
+	                data:data,
+	                dataType:'json',
+	                success:function(rs){
+	                    callback(
+	                        rs.code,
+	                        rs.data,
+	                        rs.errMsg
+	                        );
+	                },
+	                error:function(rs){
+	                    callback(
+	                        false,
+	                        null,
+	                        PW.Eng.msg[0]
+	                    );
+	                }
+	            });    
+            }    
+		})
+})

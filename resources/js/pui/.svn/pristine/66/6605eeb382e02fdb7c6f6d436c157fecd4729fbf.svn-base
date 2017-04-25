@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ext test</title>
+    <script src="../site-config.js"></script>
+    <script src="//pui.pandawork.net/resources/js/base/lib/kissy/seed.js"></script>
+</head>
+<body>
+    
+    <form action="">
+        <p>
+            username: <input  name="user" disabled="disabled" >
+        </p>
+        <p>
+            username: <input  name="user">
+        </p>
+        <p>
+            pwd: <input type="text" name="pwd">
+        </p>
+        <p>
+            <input type="radio" name="xx" value="1">1
+            <input type="radio" name="xx" value="2">2
+            <input type="radio" name="xx" value="3">3
+
+        </p>
+        <p>
+            <select name="sel" id="">
+                <option value="-1">region</option>
+                <option value="1">cc1</option>
+                <option value="2">cc2</option>
+                <option value="3" selected="selected">cc3</option>
+            </select>
+        </p>
+        <p>
+            <input type="checkbox"  name="ck" value="1">1
+            <input type="checkbox"  name="ck" value="2">2
+            <input type="checkbox"  name="ck" value="3">3
+            <input type="checkbox"  name="ck" value="4">4
+            <input type="checkbox"  name="ck" value="5">5
+        </p>
+        <button>submit</button>
+    </form>
+
+    <button id="xx">写入自定义数据</button>
+
+    <script>
+    KISSY.use('core, mod/ext', function(S){
+        S.ready(function(){
+            var
+                $ = S.all;
+            $('form').on('submit', function(){
+                return false;
+            })
+
+            $('#xx').on('click', function(){
+                S.DOM.antiSerialize('form', {
+                    ck: [2,3,4],
+                    user: 'simon',
+                    sel: 1,
+                    xx: 2
+                })
+            })
+        })
+    })
+    </script>
+</body>
+</html>

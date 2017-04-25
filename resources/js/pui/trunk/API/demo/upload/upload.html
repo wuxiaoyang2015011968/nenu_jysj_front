@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>upload</title>
+        <script src="../site-config.js"></script>
+        <script src="//pui.pandawork.net/resources/js/base/lib/kissy/seed.js"></script>
+    </head>
+    <body>
+        <span id="J_upload">上传</span>
+        <script>
+            KISSY.use('mod/upload', function(S){
+                var
+                    Upload = PW.mod.Upload;
+                var client = Upload.init({
+                        //打开调试
+                        debug: false,
+                        //定位flash player10 文件地址, 如果是绝对路径必须和当前页面同域名
+                        flashUrl: '//pui.pandawork.net/API/demo/upload/swfupload_fp10.swf',
+                        //定位flash player9 文件地址，如果是绝对路径必须和当前页面同域名
+                        flash9Url: '//pui.pandawork.net/API/demo/upload/swfupload_fp9.swf',
+                        //定义uplaod相关内容
+                        upload:{
+                            url: '',    //上传地址
+                            data: null, //上传数据
+                            type: 'post', //对应swfupload中的use_query_string参数
+                            requeueOnError: false, //当遇到错误的时候重新入栈，等待发送
+                            timeout: 0, //设置文件等待成功上传时间 0-无等待  大于0为等待时间,上传超过这个时间,默认为成功 单位: second ;
+                            successCode: ['200'] //设置成功状态，只有在此状态下才获取serverData，不建议修改
+                        },
+                        file:{
+                            sizeLimit: '',  //文件大小限制 如: '100kb', '2mb', '2MB'
+                            typeLimit: '*.*', //文件类型限制,多个用逗号隔开 如: '*.*'、 '*.png'、 '*.jpg, *.png'
+                            //允许上传的最多文件数量，同时也是设置对象中queueLimit属性的上限
+                            uploadNumLimit: 0, //上传数量限制
+                            queueNumLimit: 0, //队列数量限制
+                            typeDesp: 'All Files', //文件选择框中给用户的描述
+                            imgResize: false,    //上传的是图片文件的话，是否按照给定imgWidth， imgHeight改变图片尺寸
+                            imgWidth: 0, //上传图片允许的宽度
+                            imgHeight: 0, //上传图片允许的高度
+                            imgEncoding: '',  //JPEG | png
+                            imgQuality: 100, //图片质量，在0-100之间
+                            imgEnlaging: true   //是否允许图片放大
+                        },
+                        button:{
+                            width: 61, //按钮宽度
+                            height: 22, //按钮高度
+                            renderTo: '#J_upload', //渲染 选择器， 注意，只选第一个
+                            //imgUrl: ASSETS_URL + 'img/button-img-61x22.png', //按钮的背景图片
+                            text: '', //按钮文本
+                            textTopPadding: 0, //自定义文本的向上偏移值
+                            textleftPadding: 0, //自定义文本的向左偏移值
+                            style: '',  //按钮样式
+                            cursor: 'hand',  // pointer | hand
+                            action: 'selectFile', //点击按触发事件：有 selectFile | selectFiles | startUpload
+                            disable: false, //是否禁用按钮，一般为false
+                            uploadOnSelected: true //是否在选择文件成功之后自动上传
+                        },
+                        events:{
+                            mouseOver: null,
+                            mouseOut: null,
+                            mouseClick: null,
+                            fileDialogStart: null,
+                            fileDialogComplete: null,
+                            fileQueued: null,
+                            fileQueueError: null,
+                            uploadStart: null,
+                            uploadResizeStart: null,
+                            uploadProgress: null,
+                            uploadError: null,
+                            uploadSuccess: null,
+                            uploadComplete: null
+                        }
+                })
+            })
+        </script>
+    </body>
+</html>

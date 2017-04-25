@@ -1,0 +1,160 @@
+.content{
+	position: relative;
+}
+
+legend{
+	display: none;
+}
+.material{
+	width: 90%;
+	margin: 20px auto;
+}
+.material-show,.material-pic{
+	float: left;
+}
+.material-show{
+	display: inline-block;
+	width: 100px;
+	margin-top: 50px;
+	color: #000;
+	font-size: 20px;
+}
+.material-pic{
+	width: 60%;
+	text-align: center;
+}
+.material-pic li{
+	float: left;
+	width: 200px;
+	margin-right: 5px;
+	text-align: center;
+}
+.material-pic img{
+	width: 100px;
+	height: 100px;
+}
+.material-pic span{
+	display: inline-block;
+	margin-top: 20px;
+	font-size: 13px;
+	color: #000;
+}
+.pop-pic,.pop-check{
+	display: none;
+	position: absolute;	
+	background-color: #000;
+	background: rgba(0,0,0,.5);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7FFFFFFF,endcolorstr=#7FFFFFFF);
+	z-index: 1;
+}
+.pop-pic{
+	top: 5%;
+	left: 10%;
+	width: 70%;
+	height: 90%;
+	text-align: center;
+}
+.pop-pic img{
+	width: 90%;
+	height: 90%;
+}
+.pop-pic a,.pop-check a{
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	margin: 30px auto;
+	line-height: 30px;
+	text-align: center;
+	border:1px solid #707070;
+	background-color: #f9f9f9; 
+	color: #707070;
+}
+.pop-check{
+	top: 10%;
+	left: 10%;
+	width: 70%;
+	height: 43%;
+}
+.check{
+	width: 90%;
+	height: 190px; 
+	margin: 40px auto;
+	padding: 20px;
+	background-color: #fff;
+	color: #707070;
+	font-size: 12px;
+}
+.check span{
+	display: inline-block;
+}
+.check b{
+	display: none;
+}
+.check span strong,.material-pic strong{
+	display: inline-block;
+	margin-right: 30px;
+	color: #000;
+	font-size: 20px;
+}
+.check-state label,.check-state input{
+	margin-left: 10px;
+}
+.check-reason{
+	position: relative;
+	margin-left: 50px;
+}
+.check-reason select{
+	text-align: center;
+}
+.check-other-input{
+	display: none;
+	position: absolute;
+	top: 7px;
+	left: 400px;
+}
+.check-submit{
+	float: left;
+	width: 100px;
+	height: 30px;
+	text-align: center;
+	margin-left: 40px;
+}
+.check-submit-line{
+	position: absolute;
+	top: 155px;
+	left: 260px;
+	width: 50%;
+}
+/*.new-protocol,.check-submit-line{
+	margin-top: 50px;
+}*/
+.new-protocol{
+	margin-top: 50px;
+}
+.new-protocol-tip{
+	display: inline-block;
+	margin-bottom: -5px;
+	width: 300px;
+	height: 18px;
+	color: red;
+}
+.more-detail{
+	position: absolute;
+	/*bottom: 0px;*/
+	right: 0px;
+	width: 50%; 
+	color: #707070;
+	font-size: 12px;
+}
+.more-detail a{
+	display: inline-block;
+	width: 90px;
+	height: 30px;
+	margin: 30px 50px;
+	line-height: 30px;
+	text-align: center;
+	border:1px solid #707070;
+	background-color: #f9f9f9; 
+	color: #707070;
+}
+

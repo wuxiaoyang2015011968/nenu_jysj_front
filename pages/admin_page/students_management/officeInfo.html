@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>办公信息</title>
+	<!--#include file="/nenu_jysj_front/pages/common/link.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/script.html"  -->
+	<link rel="stylesheet" type="text/css" href="../../../resources/css/page/admin_page/students_management/officeInfo.css">	
+	<script type="text/javascript">
+		KISSY.use('page/admin_page/students_management/officeInfo',function(S){
+			S.ready(function(){
+				PW.page.admin_page.students_management.officeInfo();
+			})
+		})
+	</script>
+</head>
+<body>
+	<!--#include file="/nenu_jysj_front/pages/common/header.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/Asidebar.html"  -->
+	<script type="text/javascript">
+	    KISSY.use('module/sidebar',function(S){
+	        S.ready(function(){
+	            PW.module.Sidebar();
+	        });
+	    });
+	</script>
+	<div class="hintBox">
+    </div>	
+	<!-- 办公信息表单 -->
+	<form class="reportForm J_complete-form pw-validation" action="#">
+		<div class="hiddenArea">
+			<input type="hidden" name="statusInfoId" value="" /><br/>
+			<input type="hidden" name="commentId" value="" /><br/>
+			<input type="hidden" name="reportCardId" value="" /><br/>			
+		</div>
+		<h2 class="headTitle">办公信息</h2>		
+		<div class="tableWrapper">
+			<table class="table1">
+				<tr>
+					<td>扩展1（领取协议）</td>
+					<td><input type="radio" value="1" name="receiveAgreement" /> 是</td>
+					<td><input type="radio" value="0" name="receiveAgreement" /> 否</td>
+				</tr>
+				<tr>
+					<td>扩展2（返回协议）</td>
+					<td><input type="radio" value="1" name="returnAgreement" /> 是</td>
+					<td><input type="radio" value="0" name="returnAgreement" /> 否</td>
+				</tr>
+				<tr>
+					<td>扩展3（已就业）</td>
+					<td><input type="radio" value="1" name="alreadyEmployed" /> 是</td>
+					<td><input type="radio" value="0" name="alreadyEmployed" /> 否</td>
+				</tr>
+				<tr>
+					<td>扩展4（免师违约）</td>
+					<td colspan=2>
+						<select class="selectBox" name="freenorRelease">
+							<option value="-1">请选择</option>
+							<option value="1">材料齐全</option>
+							<option value="0">材料不全</option>
+						</select>
+					</td>
+					
+				</tr>
+				<tr>
+					<td>扩展5（免师跨省）</td>
+					<td colspan="2">
+						<select class="selectBox" name="freenorTransProvincial">
+							<option value="-1">请选择</option>
+							<option value="1">材料齐全</option>
+							<option value="0">材料不全</option>
+						</select>
+					</td>
+					
+				</tr>
+				<tr>
+					<td>扩展6（定向解约）</td>
+					<td colspan="2">
+						<select class="selectBox" name="directionalRelease">
+							<option value="-1">请选择</option>
+							<option value="1">材料齐全</option>
+							<option value="0">材料不全</option>
+						</select>
+					</td>
+					
+				</tr>
+				<tr>
+					<td>扩展7（春季派遣）</td>
+					<td colspan="2">
+						<input type="text" placeholder="春季派遣时间" class="J_date spring" name="springDispatch">
+					</td>
+					
+				</tr>
+			</table>
+			<table class="table2">
+				<tr>
+					<td>扩展8（进京津沪深函）</td>
+					<td colspan="2">
+						<select class="selectBox" name="beijingLetter">
+							<option value="-1">请选择</option>
+							<option value="1">材料齐全</option>
+							<option value="0">材料不全</option>
+						</select>
+					</td>
+					
+				</tr>
+				<tr>
+					<td>扩展9（用人单位同意派至生源地函）</td>
+					<td colspan="2">
+						<select class="selectBox" name="agreeToOriginPlace">
+							<option value="-1">请选择</option>
+							<option value="1">材料齐全</option>
+							<option value="0">材料不全</option>
+						</select>
+					</td>
+					
+				</tr>
+				<tr>
+					<td>扩展10（解约）</td>
+					<td colspan="2">
+						<select class="selectBox" name="threePartyRelease">
+							<option value="-1">请选择</option>
+							<option value="1">材料齐全</option>
+							<option value="0">材料不全</option>
+						</select>
+					</td>
+					
+				</tr>
+				<tr>
+					<td>扩展11（协议丢失或污损）</td>
+					<td colspan="2">
+						<select class="selectBox" name="protocolGetWrong">
+							<option value="-1">请选择</option>
+							<option value="1">材料齐全</option>
+							<option value="0">材料不全</option>
+						</select>
+					</td>
+					
+				</tr>
+				<tr>
+					<td>扩展12（系统上传）</td>
+					<td colspan="2">
+						<select class="selectBox" name="systeamUpload">
+							<option value="-1">请选择</option>
+							<option value="1">材料齐全</option>
+							<option value="0">材料不全</option>
+						</select>
+					</td>
+					
+				</tr>
+				<tr>
+					<td>扩展13（资格审查漏报）</td>
+					<td colspan="2">
+						<select class="selectBox" name="qualificationExaminationMissing">
+							<option value="-1">请选择</option>
+							<option value="1">已上传</option>
+							<option value="0">未上传</option>
+						</select>
+					</td>
+					
+				</tr>
+				<tr>
+					<td>扩展14（协议领错）</td>
+					<td colspan="2">
+						<select class="selectBox" name="protocolGetWrong">
+							<option value="-1">请选择</option>
+							<option value="1">材料齐全</option>
+							<option value="0">材料不全</option>
+						</select>
+					</td>
+					
+				</tr>
+			</table>
+		</div>
+	<!-- 报到证打印状态 -->
+		<h2 class="headTitle">报到证打印状态</h2>		
+		<div class="reportWrapper">
+			<div>
+				<span>已打印报到证：</span>
+				<div></div>
+			</div>
+			<div class="reportNumber">
+				报道证号: <div></div>
+				<p class="J_reportNum" >请填写正确的报到证号号</p>
+			</div>
+		</div>
+		<!-- 按钮部分 -->
+		<div>
+			<div>
+				<a href="http://static.jysj.net/pages/admin_page/students_management/dispatch/infoDetail.html" class="dispatchInfo">派遣信息</a>
+				<a href="http://static.jysj.net/pages/admin_page/students_management/school_roll/infoDetail.html" class="studentInfo">学籍信息</a>
+			</div>
+			<div class="submitWrapper">
+				<input type="submit" class="submit-complete-form" value="提交"  />
+			</div>
+		</div>
+	</form>
+</body>
+</html>

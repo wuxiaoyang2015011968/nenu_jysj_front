@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="http://sf.pandawork.net/lib/cssreset/reset-min.css">
+	<link rel="stylesheet" href="../resources/css/">
+	<script type="text/javascript" src="http://sf.pandawork.net/resources/js/app/site-config.js"></script>
+	<script type="text/javascript" src="http://sf.pandawork.net/resources/js/base/lib/kissy/seed.js"></script>
+	<title>json-string</title>
+	<script type="text/javascript">
+		KISSY.use('core,mod/clipboard',function(S){
+			var 
+				DOM = S.DOM, get = DOM.get, query = DOM.query, on = S.Event.on,JSON = S.JSON, EMPTY_FUNCTION = function(){},
+				cp = PW.clipboard({
+						renderTo:'#J_copy',
+						cursor:true,
+						load:function(c){
+						},
+						mouseover:EMPTY_FUNCTION,
+						complete:function(){
+							alert('复制成功');
+						}
+					});;
+			on('#J_btn','click',function(){
+				var
+					ta = get('#J_jsonText'),
+					taVal = DOM.val(ta),
+					rslt;
+				try{
+					var obj = eval('('+taVal+')');
+					rslt = JSON.stringify(obj);
+					S.log(rslt);
+					DOM.html('#J_result',rslt);
+					cp.setText(rslt);
+				}catch(err){
+					alert('输入的不是json格式，或者内部运行出错，请检查或联系前端组fep@pandawork.net！');
+					S.log(err);
+				}
+			});
+		});
+	</script>
+	<style>
+		.holder{
+			width: 1000px;
+			margin: 0 auto;
+		}
+		textarea{
+			width: 100%;
+			height: 200px;
+			border: 1px solid #c3c3c3;
+		}	
+		
+		.rslt-title{
+			position: relative;
+			height: 30px;
+			margin: 5px 0;
+			padding-left: 130px;
+
+		}
+		.rslt-title p{
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			line-height: 30px;
+		}
+		.rslt-title .copy{
+			display: block;
+			float: left;
+			width: 60px;
+			border: 1px soldi red;
+			padding: 5px;
+			background: #ddd;
+			color: #333;
+			line-height: 20px;
+		}
+		.rslt-title .hover{
+			background: #eee;
+		}
+		.rlst-holder{
+			border: 1px solid #c3c3c3;
+		}
+	</style>
+</head>
+<body>
+	<div class="holder">
+		<h2>请输入json格式的代码，我们将自动为其转换成字符串格式：</h2>
+		<textarea id="J_jsonText">
+				
+		</textarea>
+		<button type="button" id="J_btn">点击转换</button>
+		<hr>
+		<h2  class="rslt-title clearfix">
+			<p>转换之后的结果是：</p>
+			<a id="J_copy" class="copy" href="javascript:;"><b>复制文本</b></a>
+		</h2>
+		<div id="J_result" class="rlst-holder">
+			null
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!--黎星宇 系统管理 上传数据 HTML-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>系统管理--上传文件</title>
+	<!--#include file="/nenu_jysj_front/pages/common/link.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/script.html"  -->
+	<link rel="stylesheet" type="text/css" href="/nenu_jysj_front/resources/css/page/admin_page/system_management/importData.css">
+	<script type="text/javascript" src="/nenu_jysj_front/resources/upload/js/jquery-1.7.2.js"></script>
+</head>
+<body>
+    <!--#include file="/nenu_jysj_front/pages/common/header.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/Asidebar.html"  -->
+	<script type="text/javascript">
+	    KISSY.use('module/sidebar',function(S){
+	        S.ready(function(){
+	            PW.module.Sidebar();
+	        });
+	    });
+	</script>	
+	<div class="content">
+	    <div class="remind"></div>
+		<div class="update">
+		    <div class="upbox">
+		    	<span class="note">导入学籍数据：</span><br />
+		    	<a href="#" class="tip">点击这里查看学籍数据的文件模板</a>
+			    <span class="cover btn">
+			        选择文件
+	 		    </span>
+	 		    <form method="get" action="" enctype="multipart/form-data" id="1">
+			    	<input type="file" class="up" name="student_roll" />
+			    </form>
+		    </div>
+		    <div class="upbox">
+		    	<span class="note">导入派遣数据：</span><br />
+		    	<a href="#" class="tip">点击这里查看派遣数据的文件模板</a>
+			    <span class="cover btn">
+			        选择文件
+	 		    </span>
+	 		    <form method="get" action="" enctype="multipart/form-data" id="2">
+			    	<input type="file" class="up" name="dispatch" />
+			    </form>
+		    </div>
+		    <div class="upbox">
+		    	<span class="note">导入报到证数据：</span><br />
+		    	<a href="#" class="tip">点击这里查看报到证数据的文件模板</a>
+			    <span class="cover btn">
+			        选择文件
+	 		    </span>
+	 		    <form method="get" action="" enctype="multipart/form-data" id="3">
+			    	<input type="file" class="up" name="report" />
+			    </form>
+		    </div>
+			<p class="upname">
+				<img src="/nenu_jysj_front/resources/img/admin_page/system_management/excel.jpg" class="excel">
+				<span class="filename">仅支持上传xls类型文件！</span>
+			</p>
+			<div class="inputs">
+			    <input type="button" class="submit" value="确认上传" />
+			    <input type="button" class="delete" value="取消上传" />
+			</div>	
+		</div>
+		<div class="tips">
+			<ol>
+				<li>学籍和派遣数据需要用学号对应学生账号，没有学号的不会被导入系统；</li>
+				<li>已经导入系统的，即学号已经在系统中存在的，不会被再次导入系统；</li>
+				<li>必须先导入学籍信息，再导入派遣信息，学籍信息不存在的，派遣信息不会被导入。</li>
+			</ol>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="/nenu_jysj_front/resources/js/page/admin_page/system_management/importData.js"></script>
+</html>

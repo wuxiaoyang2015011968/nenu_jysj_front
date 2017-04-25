@@ -1,0 +1,180 @@
+<!-- 管理员的学籍的查看详情页 廖月云 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>查看详情</title>
+	<!--#include file="/nenu_jysj_front/pages/common/link.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/script.html"  -->
+	<link rel="stylesheet" type="text/css" href="../../../../resources/css/common/detail.css">
+</head>
+<body>
+	<div class="page">
+		<!--#include file="/nenu_jysj_front/pages/common/header.html"  -->
+		<!--#include file="/nenu_jysj_front/pages/common/Asidebar.html"  -->
+		<script type="text/javascript">
+		    KISSY.use('module/sidebar',function(S){
+		        S.ready(function(){
+		            PW.module.Sidebar();
+		        });
+		    });
+		</script>	
+		<div class="content">
+			<div class="infomation">
+				<table>
+					<caption>
+						<span>xxx</span>学籍信息表
+					</caption>
+					<tr>
+						<td>姓名</td>
+						<td></td>
+						<td>性别</td>
+						<td></td>
+						<td>民族</td>
+						<td></td>
+						<td>政治面貌</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>考生号</td>
+						<td></td>
+						<td>身份证号</td>
+						<td></td>
+						<td>学号</td>
+						<td></td>
+						<td>学校</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>学制</td>
+						<td></td>
+						<td>学历</td>
+						<td></td>
+						<td>所在院系/分院</td>
+						<td></td>
+						<td>所在年级</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>师范生类别</td>
+						<td></td>
+						<td>培养方式</td>
+						<td></td>
+						<td>入学日期</td>
+						<td></td>
+						<td>毕业日期</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>拟毕业去向</td>
+						<td></td>
+						<td>困难生类别</td>
+						<td></td>
+						<td>档案是否转入学校</td>
+						<td></td>
+						<td>户口是否转入学校</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>手机号码1</td>
+						<td></td>
+						<td>手机号码2</td>
+						<td></td>
+						<td>QQ号码</td>
+						<td></td>
+						<td>微信号</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>家庭电话</td>
+						<td></td>
+						<td>亲属联系方式</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>生源地类别</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>专业名称</td>
+						<td colspan="3">生化与药品大类-生物技术类-生物技术及应用</td>
+						<td>生源所在地</td>
+						<td colspan="3">宁夏银川市兴庆区</td>
+					</tr>
+					<tr>
+						<td>入学前档案所在单位</td>
+						<td colspan="3"></td>
+						<td>入学前户口所在地</td>
+						<td colspan="3">宁夏银川市兴庆区</td>
+					</tr>
+					<tr>
+						<td>常用电子邮箱</td>
+						<td colspan="3">lancheme@foxmail.com</td>
+						<td>家庭地址</td>
+						<td colspan="3"></td>
+					</tr>
+					<tr>
+						<td>定向委培单位地址</td>
+						<td colspan="3"></td>
+						<td>定向委培单位</td>
+						<td colspan="3"></td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<table>
+					<caption>
+						参考项修改信息详情
+					</caption>
+					<tr>
+						<td>序号</td>
+						<td>修改项</td>
+						<td>原信息</td>
+						<td>改后信息</td>
+						<td>修改时间</td>
+					</tr>
+					<tr id="school">
+						<td class="check-level">学校</td>
+						<td class="check-result" value="weishenhe">未审核</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<div class="material clearfix">	
+				<strong class="material-show">材料展示</strong>
+				<ul class="material-pic clearfix">
+					<li>
+						<img src="../../../../resources/img/admin_page/business_handling/pic_show1.jpg">
+						<span>吃的呢吃的呢吃的呢吃的呢</span>
+					</li>
+					<li>
+						<img src="../../../../resources/img/admin_page/business_handling/pic_show2.jpg">
+						<span>吃的呢吃的呢吃的呢吃的呢</span>
+					</li>
+					<li>
+						<img src="../../../../resources/img/admin_page/business_handling/pic_show3.jpg">
+						<span>吃的呢吃的呢吃的呢吃的呢</span>
+					</li>
+				</ul>
+			</div>
+			<div class="confirm">
+				<a href="javascript:;">返回修改</a>
+				<a href="javascript:;">确认提交</a>
+			</div>
+			<div class="pop-pic">
+				<img src="">
+				<a href="javascript:;">关闭</a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		KISSY.use('page/admin_page/students_management/school_roll/checkDetail',function(S){
+			S.ready(function(){
+				PW.page.admin_page.students_management.school_roll.checkDetail();
+			})
+		}) 
+	</script>
+</body>
+</html> 

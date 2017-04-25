@@ -1,0 +1,110 @@
+/*---------------------------------------------------------------------------------------------
+@Filename: importData.css
+@Description: 系统管理 上传数据 CSS定义
+@Version: 1.0.0(2016-09-08)
+@author: lixingyu
+2016-07-12:
+初始生成。
+--------------------------------------------------------------------------------------------*/
+.content {
+	min-width: 1000px;
+}
+.remind {
+    background: rgb(245, 245, 245);
+    border-bottom: 1px solid rgb(229, 229, 229);
+    color: red;
+    line-height: 32px;
+    min-height: 32px;
+    font-size: 16px;
+    margin-bottom: 100px;
+}
+.btn{
+	width: 80px;
+	height: 20px;
+	border-radius: 4px;
+	font-size: 16px;
+}
+.update{
+   width: 800px;
+   height: 340px; 
+   margin: 30px auto;
+   border: 1px solid #000;
+}
+.upbox{
+	position: relative;
+	width: 33%;
+	height: 90px;
+	padding-top: 10px;
+	text-align: center;
+	display: inline-block;
+}
+.note{
+	font-size: 16px;
+}
+.tip{
+	color: #888;
+	line-height: 30px;
+}
+.tip:hover{
+	color: #3399FF;
+}
+.upname{
+	width: 100%;
+	height: 25px;
+	margin-top: 70px;
+	font-size: 18px;
+	color: #888;
+}
+.up{
+	width: 80px;
+	height: 30px;
+	opacity: 0;
+}
+.up{
+	cursor: pointer;
+}
+.cover,.up{
+	position: absolute;
+	top: 80px;
+	left: 80px;
+}
+.excel{
+	width: 30px;
+	height: 25px;
+    margin-left: 40px;
+    vertical-align: top;
+}
+.submit{
+	width: 80px;
+	height: 35px;
+	color: #fff;
+    background-color: #d9534f;
+    border:1px solid #d43f3a;;
+    font-size: 15px;
+    border-radius: 4%;
+    cursor: pointer;
+}
+.delete{
+	width: 80px;
+	height: 35px;
+	color: #fff;
+    background-color: #f0ad4e;
+    border:1px solid #eea236;
+    font-size: 15px;
+    border-radius: 4%;
+}
+.inputs{
+	width: 170px;
+	height: 35px;
+	margin: 70px auto;
+	margin-bottom: 0;
+}
+.tips{
+	width: 760px;
+	margin: 20px auto;
+}
+.tips ol{
+	list-style: disc;
+	font-size: 20px;
+	font-weight: bold;
+}

@@ -1,0 +1,199 @@
+<!-- 新增加性别，民族，政治面貌，学制 学历 -->
+<!-- 将专业改为专业名称四级联动 -->
+<!-- 添加类为“other-major”的块 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>新增学生</title>
+	<!--#include file="/nenu_jysj_front/pages/common/link.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/script.html"  -->
+	<link rel="stylesheet" type="text/css" href="../../../resources/css/page/admin_page/students_management/newStudent.css">
+	<script type="text/javascript">
+		KISSY.use('page/admin_page/students_management/newStudent',function(S){
+			S.ready(function(){
+				PW.page.admin_page.students_management.newStudent();
+			})   
+		})
+	</script>
+</head>
+<body>
+	<!--#include file="/nenu_jysj_front/pages/common/header.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/Asidebar.html"  -->
+	<script type="text/javascript">
+	    KISSY.use('module/sidebar',function(S){
+	        S.ready(function(){
+	            PW.module.Sidebar();
+	        });
+	    });
+	</script>
+	<div class="alertWrapper">
+
+	</div>
+	<div>
+		<h2 class="headTitle">新增学生</h2>
+	</div>
+	<form class="J_complete-form pw-validation" action="#" method="post" name="J_complete-form">
+		<div class="divCommon fontColor">
+			<label  for="">姓名：</label>
+			<input type="text" id="" name="name" class="studentName J_notNull"/>
+			<p class="J_stuName" display="none">请输入正确的姓名</p>
+		</div>
+
+		<div class="divCommon fontColor">
+			<label for="">身份证号：</label>
+			<input type="text" id="" name="idNumber" class="idNumber J_notNull"/>
+			<p class="J_idNumber">请输入18位身份证号</p>
+		</div>
+
+		<div class="divCommon fontColor">
+			<label>考生号：</label>
+			<input type="text" id="" name="candidateNumber" class="candidateNumber J_notNull" />
+			<p class="J_candidateNum">请输入正确考生号</p>
+		</div>
+
+		<div class="divCommon fontColor">
+			<label>学号：</label>
+			<input type="text" id="" name="studentNumber" class="studentNumber J_notNull"/>
+			<p class="J_stuNumber">请输入正确的学号</p>
+		</div>
+
+		<div class="divCommon fontColor">
+			<label>民族：</label>
+			<select class="nation J_notOption" name="nationCode" autocomplete="off">
+				<option value="-1">请选择</option>
+				<option value="1">汉族</option>
+			</select>
+		</div>
+
+		<div class="divCommon fontColor change-sex">
+			<label>性别：</label>
+			<input type="radio" id="male" name="sex" value="1" checked="checked" />
+			<label for="male">男</label>
+			<input type="radio" id="female" name="sex" value="2" />
+			<label for="female">女</label>
+		</div>
+
+		<div class="divCommon fontColor">
+			<label>政治面貌：</label>
+			<select class="politicalStand J_notOption" name="politicalStandCode" autocomplete="off">
+				<option value="-1">请选择</option>
+				<option value="1">共青团员</option>
+			</select>
+		</div>
+
+		<div class="divCommon fontColor">
+			<label>学制：</label>
+			<select class="stuLength J_notOption" name="stuLengthCode" autocomplete="off">
+				<option value="-1">请选择</option>
+				<option value="1">4</option>
+			</select>
+		</div>
+
+		<div class="clearfix divCommon fontColor">
+			<label>学历：</label>
+			<select class="qualification J_notOption" name="qualificationCode" autocomplete="off">
+				<option value="-1">请选择</option>
+				<option value="1">本科毕业</option>
+			</select>
+		</div>
+
+		<div class="divCommon fontColor">
+			<label>所在院系：</label>
+			<select class="college J_notOption" name="collegeCode" autocomplete="off">
+				<option value="-1">请选择</option>
+				<option value="1">信息与软件工程学院</option>
+			</select>
+		</div>
+		
+		<div class="divCommon fontColor">
+			<label>所在年级：</label>
+				<select class="grade J_notOption" name="grade" autocomplete="off">
+				<option value="-1">请选择</option>
+				<option value="1">2014</option>
+			</select>
+		</div>
+
+		<div class="divCommon fontColor">
+			<label>师范生类别：</label>
+			<select class="J_notOption"  name="normalStuCode" autocomplete="off">
+				<option value="-1">请选择</option>
+				<option value="1">公费师范生</option>
+				<option value="2">普通师范生</option>
+				<option value="3">非师范生</option>
+			</select>
+		</div>
+
+		<div class="major-name origin fontColor clearfix">
+			<label class="major-label must no-matter">专业名称：</label>
+			<select class="J_qualification J_notOption" name="majorQualification" autocomplete="off">
+				<option value="-1" selected="">请选择</option>
+				<option value="1">本科专业</option>
+				<option value="2">研究生专业</option>
+			</select>
+			<label>------</label>
+			<select class="J_notOption J_majorClass" autocomplete="off" name="majorClass">
+				<option value="-1" selected="">请选择专业大类</option>
+			</select>
+			<label>------</label>
+			<select class="J_notOption J_majorMinorClass" autocomplete="off" name="majorMinorClass">
+				<option value="-1" selected="">请选择专业中类</option>
+			</select>
+			<label>------</label>
+			<select class="J_notOption J_majorName" name="majorCode" autocomplete="off">
+				<option value="-1" selected="">请选择专业</option>
+			</select>
+		</div>
+		
+		<div class="divCommon fontColor">
+			<label>培养方式：</label>
+			<select class="J_notOption trainingMode" name="trainingModeCode" autocomplete="off">
+				<option value="-1">请选择</option>
+				<option value="1">非定向</option>
+				<option value="2">定向</option>
+				<option value="3">自筹</option>
+				<option value="4">委培</option>
+				<option value="4">在职</option>
+			</select>
+		</div>
+		
+		<div class="other-major fontColor divCommon">
+            <label class="must matter">请填写专业名称：</label>
+            <input type="text" name="otherMajor" disabled="true" />
+	    </div>
+
+		<div class="origin fontColor">
+			<label>生源所在地：</label> 
+			<input class="area-id-local" type="hidden" name="areaId">
+			<input type="text" name="originPlace" autocomplete="off" class="J_areaHolder J_notNull" id="J_localAreaHolder"/>
+			<ul class="none areaFidle" id="J_areaFidle_local"></ul>
+			<p style="padding-left: 112px;"></p>
+		</div>
+		<div class="areaCode shengyuan">
+			<label>地区代码：</label>
+			<input type="text" name="originPlaceCode" class="local-code J_local_code " onfocus="this.blur()" value="222222"/>
+		</div>
+
+		<div class="company divCommon fontColor J_orientation">
+			<label for="">委培/定向单位：</label>
+			<input type="text" id="unit" name="weipeiUnit"  class="J_notNull"/>
+		</div> 
+
+		<div class="companyAddress fontColor J_orientation">
+			<label>定向/委培单位地址：</label>
+			<input class="area-id-unit" type="hidden" name="areaId">
+			<input id="J_unitAreaHolder" class="J_areaHolder J_notNull" type="text"  name="weipeiUnitPlace" autocomplete="off"/>
+			<ul class="none areaFidle position" id="J_areaFidle_unit"></ul>
+			<p style="padding-left: 118px;"></p>
+		</div>
+		<div class="areaCode J_orientation weipei">
+			<label>地区代码：</label>
+			<input type="text" class="unit-code J_unit_code" onfocus="this.blur()" name="weipeiUnitPlaceCode" value="000000"/>
+		</div>
+
+		<div class="submitWrapper">
+			<input type="submit" class="newStudentSubmit" value="新增学生"/>
+		</div>
+	</form>
+</body>
+</html>

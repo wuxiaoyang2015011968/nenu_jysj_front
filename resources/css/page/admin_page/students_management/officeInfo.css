@@ -1,0 +1,88 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "Microsoft Yahei";
+}
+.reportForm{
+	margin: 0px 0px 0px 184px;
+}
+.tableWrapper{
+	border: 1px solid #ccc;
+	margin-left: 5%;
+	height: 350px; 
+}
+.reportWrapper{
+	border: 1px solid #ccc;
+	margin-left: 5%;
+	height: 60px;
+	clear: both;
+	padding: 20px;
+}
+.headTitle{
+	margin: 1% 0px 0px 5%;
+	font-size: 20px;
+	clear: both;
+}
+.table1,.table2{
+	width: 48%;
+	float: left;
+	height: 300px;
+	margin-left: 10px;
+	border: none;
+}
+table tr td{
+	text-align: left;
+	border: 0;
+}
+.table2 tr td {
+	width: 44%;
+}
+input{
+	vertical-align: middle;
+}
+input[type="text"]{
+	width: 41.3%;
+	height: 2em;
+}
+.selectBox{
+	width: 55.678%;
+	height: 2.166em;
+}
+.spring{
+	width: 55% !important;
+}
+.J_reportNum{
+	display: none;
+}
+.reportNumber,.reportTime,.dispatchTime{
+	width: 33%;
+	height: 2em;
+	float: left;
+	padding-top: 10px;
+}
+.studentInfo,.dispatchInfo{
+	display: inline-block;
+	float: right;
+	margin: 2% 4% 0 0;
+	width: 6%;
+	height: 2em;
+	padding-top: 0.45em;
+ 	text-align: center;
+ 	color: #fff;
+ 	font-size: 1em;
+	background: #6fb3e0;
+}
+.space{
+	margin-left: 1.2em;
+}
+.submitWrapper{
+	text-align: center;
+	clear: both;
+}
+.submit-complete-form{
+	width: 7.4%;
+	height: 2.84em;
+	color: #fff;
+	background: #6fb3e0;
+	border: none;
+}

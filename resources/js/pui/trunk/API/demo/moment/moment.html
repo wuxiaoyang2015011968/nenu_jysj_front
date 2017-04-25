@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>new Page</title>
+    <script src="../site-config.js"></script>
+    <script src="//pui.pandawork.net/resources/js/base/lib/kissy/seed.js"></script>
+</head>
+<body>
+        <input type="text">
+    <script>
+        KISSY.use('mod/moment', function (S, Calendar) {
+            S.ready(function(){
+                var a = PW.moment(S.now());
+                S.log(a.format("YYYY_MM_DD ---- hh:mm:ss"));
+            });
+        })
+    </script>
+</body>
+</html>

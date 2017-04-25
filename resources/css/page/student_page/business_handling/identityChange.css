@@ -1,0 +1,46 @@
+.identityCon{
+	min-height: 540px;
+	margin-left: 192px;
+	background: none repeat scroll 0 0;
+}
+.identity{
+	width: 65%;
+	float: left;
+	margin-left: 80px;
+}
+.selection{
+	margin: 50px 0 100px 100px;
+}
+.selection select{
+	width: 286px;
+	height: 35px;
+}
+.selection span{
+	font-size: 16px;
+}
+.idFocus{
+	float: right;
+    height: 280px;
+    margin-top: 144px;
+    width: 25%;
+}
+.focContent{
+	margin-left: 20px;
+	font-size: 20px;
+}
+.idFocus span{
+	color: red;
+}
+.secSub{
+	width: 85%;
+	height: 50px;
+	margin-left: 191px; 
+}
+.secSub input{
+	width: 140px;
+	margin-top: 300px;
+	height: 35px;
+	background: rgb(111, 179, 224) none repeat scroll 0 0;
+    border: 0 none;
+    color: #fff;
+}

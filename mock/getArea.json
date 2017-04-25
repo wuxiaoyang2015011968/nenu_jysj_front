@@ -1,0 +1,13 @@
+{
+	"code": 0,
+	"dataCount": 10000,
+	"data": [
+		{"cnName": "吉林省长春市", "enName": "jlsccs", "id": 10, "areacode": "44444"},
+		{"cnName": "辽宁省沈阳市", "enName": "lnssys", "id": 11, "areacode": "55555"},
+		{"cnName": "黑龙江省哈尔滨市", "enName": "hljshebs", "id": 12, "areacode": "66666"},
+		{"cnName": "吉林省吉林市", "enName": "jlsjls", "id": 13, "areacode": "77777"},
+		{"cnName": "北京市密云县", "enName": "bjsmyxjw", "id": 7, "areacode": "11111" }, 
+		{"cnName": "湖南省浏阳市", "enName": "hnslysjyj", "id": 8, "areacode": "22222"},
+		{"cnName": "新疆昌吉州玛纳斯县", "enName": "xjcjzmnsxjyhkxjsj", "id": 9, "areacode": "33333"}
+	]
+}

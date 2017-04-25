@@ -1,0 +1,289 @@
+/*----------------------------------------------------
+@Filename: school_roll_common.css
+@Description: 填写及修改学籍信息页面公共样式
+@Version: 1.0.0(2016-07-14)
+@author: qiyuan
+=======================================================
+2016-05-09:
+初始生成。
+------------------------------------------------------*/
+.container {
+	position: relative;
+}
+.remind {
+	background: rgb(245, 245, 245);
+    border-bottom: 1px solid rgb(229, 229, 229);
+    color: red;
+    line-height: 32px;
+    min-height: 17px;
+    padding: 7px 30px;
+    font-size: 16px;
+}
+.main_form {
+	width: 96%;
+	margin: 25px;
+}
+.main_form em {
+	float: right;
+	margin-right: 20px;
+	cursor: pointer;
+}
+.summary a {
+	float: right;
+	margin-right: 20px;
+	/*text-decoration: underline;*/
+	color: #34538b;
+}
+.main_form a.phone-hint {
+	position: absolute;
+	right: -33px;
+}
+.main_form h2 {
+	font-size: 20px;
+	margin: 10px 0;
+}
+.summary,.material {
+	width: 97%;
+	border: 1px solid rgb(204,204,204);
+	padding: 15px 15px 0 20px;
+}
+.summary > div,.summary > span {
+	min-height: 54px;
+	float: left;
+	position: relative;
+}
+.summary > div {
+	width: 14%;
+	padding: 7px 0 7px 11%;
+}
+label.matter {
+	width: 41%;
+    left: 0;
+    position: absolute;
+    text-align: right;
+    top: 7px;
+}
+label.no-matter {
+	width: 20%;
+    left: 0;
+    position: absolute;
+    text-align: right;
+    top: 7px;
+}
+.major-name,.unit-addr {
+	width: 63%;
+	padding: 7px 10px 7px 11%;
+}
+.student-major-name {
+	width: 38%;
+	padding: 7px 10px 7px 11%;
+}
+.summary > div select,.summary > span select {
+	height: 2em;
+	color: rgb(57,57,57);
+	border: 1px solid #ccc;
+	/*margin-left: -4px;*/
+}
+.summary > div select {
+	width: 91.5%;
+}
+.summary > span select {
+	width: 21%;
+}
+.main_form input[type=text] {
+	width: 90%;
+	height: 1.8em;
+	border: 1px solid #ccc;
+}
+.main_form input[type=radio] {
+	vertical-align: -2px;
+	margin-left: 22%;
+}
+.main_form input[type=button],.main_form input[type=submit],.main_form em {
+	background: rgb(111, 179, 224);
+	color: #fff;
+	border: 0;
+	padding: 3px 6px;
+}
+.btnbox {
+	width: 23%;
+	margin: 50px auto;
+}
+.main_form input[type=submit] {
+	margin-left: 42%;
+}
+.save,.main_form input[type=submit] {
+	font-size: 16px;
+	padding: 4px 8px;
+}
+.must {
+	color: #cc0000;
+}
+.other-major,.summary > div > p {
+	display: none;
+}
+.summary > div > p {
+	color: red;
+}
+.areaFidle {
+	position: absolute;
+	background: #fff;
+    border: 1px solid #2679b5;
+    left: 44%;
+    top: 47%;
+    width: 70%;
+    max-height: 560px;
+    z-index: 2;
+    overflow-y: auto;
+}
+.areaFidle li {
+    cursor: pointer;
+    height: 28px;
+    line-height: 28px;
+}
+.main_form input.local-code,.main_form input.unit-code {
+	border: 0;
+}
+.scene {
+	background: rgb(0,0,0);
+	opacity: 0.6;
+	filter:alpha(opacity=60);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+/*弹出框*/
+.hint-box {
+	position: fixed;
+	top: 30%;
+	left: 38%;
+	background: #fff;
+	width: 477px;
+	height: 305px;
+	box-shadow: 0 0 30px;
+	font-size: 12px;
+	z-index: 1000;
+}
+.hint-box > div:first-child,.delete-box > div:first-child {
+	border: 1px solid #ddd;
+    height: 24px;
+    padding: 5px 20px;
+    color: #fff;
+    font-size: 14px;
+    background: rgb(67,142,185);
+}
+.hint span,.delete-info span {
+	float: right;
+	cursor: pointer;
+}
+.delete-info span {
+	margin-top: -20px;
+}
+.hint-box p,.delete-box p {
+	vertical-align: center;
+	font-size: 14px;
+}
+.close-btn,.close-button {
+	display: inline-block;
+	height: 28px;
+	line-height: 28px;
+    background-color: #438eb9 !important;
+    border: 0 solid #438eb9;
+    color: #ffffff;
+    border: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 188px;
+}
+.close-btn {
+	width: 120px;
+    margin: 0 188px;
+}
+/*展示材料*/
+.pic-show li,.material ul li {
+	float: left;
+}
+.material ul li span {
+	display: block;
+	text-align: center;
+}
+.material img,.pic-show img {
+	max-width: 145px;
+	height: 120px;
+	cursor: pointer;
+}
+.delete-box {
+    width: 405px;
+    height: 158px;
+    position: fixed;
+    top: 30%;
+    left: 38%;
+    background: #fff;
+    box-shadow: 0 0 30px;
+    font-size: 12px;
+    z-index: 1000;
+}
+.close-button {
+    float: left;
+    width: 80px;
+    margin: 38px 60px;
+}
+.uploaded-img {
+    width: 140px;
+    height: 106px;
+}
+.material li {
+    float: left;
+    position: relative;
+    margin-left: 20px;
+    width: 140px;
+    height: 160px;
+}
+.material span {
+    display: block;
+    width: 140px;
+    text-align: center;
+}
+.pop-pic {
+	position: absolute;
+	background-color: #000;
+	background: rgba(0,0,0,.6);
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7FFFFFFF,endcolorstr=#7FFFFFFF);
+	z-index: 1;
+}
+.pop-pic {
+	top: 30%;
+	left: 18%;
+	width: 70%;
+	height: 90%;
+	text-align: center;
+}
+.pop-pic img {
+	width: 80%;
+	height: 80%;
+	margin-top: 50px;
+}
+.pop-pic a {
+	display: block;
+	width: 100px;
+	height: 30px;
+	margin: 30px auto;
+	line-height: 30px;
+	text-align: center;
+	border:1px solid #707070;
+	background-color: #f9f9f9;
+	color: #707070;
+}
+.delete {
+	background: rgba(0, 0, 0, 0) url("../../img/common/ioc.png") no-repeat scroll -302px 11px;
+    display: block;
+    height: 30px;
+    position: absolute;
+    right: -2px;
+    top: -4px;
+    width: 30px;
+}

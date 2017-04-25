@@ -1,0 +1,162 @@
+{
+	"code:": 0,
+	"dataCount": 10,
+	"data" : [	
+	           {
+	           	"studentOrder":"1",
+	           	"stuStatusInfoId":"5" ,
+	           "name":"哈哈哈" ,
+	       		"stuNumber":"201502222" ,
+	       		"grade" : "2015" ,
+	       		"studentMajor":"软件",
+			    "studentCollege" :"软件学院",
+			    "studentUp" : "已提交",
+			    "studentUpTime" : "2015-5-12",
+			    "collegeVerify" : "已审核",
+			    "collegeVerifyTime" : "2015-5-14",
+			    "universityVerify" : "未审核",
+			    "universityVerifyTime" : "无"
+	       		} ,
+
+	       		{
+	       		"studentOrder":"2",
+	       		"stuStatusInfoId":"21" ,
+	           "name":"呵呵呵" ,
+	       		"stuNumber":"20586222" ,
+	       		"grade" : "2015" ,
+	       		"studentMajor":"软件",
+			    "studentCollege" :"软件学院",
+			    "studentUp" : "已提交",
+			    "studentUpTime" : "2015-5-12",
+			    "collegeVerify" : "已审核",
+			    "collegeVerifyTime" : "2015-5-14",
+			    "universityVerify" : "未审核",
+			    "universityVerifyTime" : "2015-6-01"
+	       		} ,
+
+	       		{
+	       		"studentOrder":"3",
+	       		"stuStatusInfoId":"36" ,
+	           "name":"哈哈哈" ,
+	       		"stuNumber":"201502222" ,
+	       		"grade" : "2015" ,
+	       		"studentMajor":"软件",
+			    "studentCollege" :"软件学院",
+			    "studentUp" : "已提交",
+			    "studentUpTime" : "2015-5-12",
+			    "collegeVerify" : "已审核",
+			    "collegeVerifyTime" : "2015-5-14",
+			    "universityVerify" : "未审核",
+			    "universityVerifyTime" : "无"
+	       		} ,
+
+	       		{
+	       		"studentOrder":"4",
+	       		"stuStatusInfoId":"48" ,
+	           "name":"哈哈哈" ,
+	       		"stuNumber":"201502222" ,
+	       		"grade" : "2015" ,
+	       		"studentMajor":"软件",
+			    "studentCollege" :"软件学院",
+			    "studentUp" : "已提交",
+			    "studentUpTime" : "2015-5-12",
+			    "collegeVerify" : "已审核",
+			    "collegeVerifyTime" : "2015-5-14",
+			    "universityVerify" : "未审核",
+			    "universityVerifyTime" : "无"
+	       		} ,
+	       		{
+	       		"studentOrder":"5",
+	       		"stuStatusInfoId":"57" ,
+	           "name":"哈哈哈" ,
+	       		"stuNumber":"201502222" ,
+	       		"grade" : "2015" ,
+	       		"studentMajor":"软件",
+			    "studentCollege" :"软件学院",
+			    "studentUp" : "已提交",
+			    "studentUpTime" : "2015-5-12",
+			    "collegeVerify" : "已审核",
+			    "collegeVerifyTime" : "2015-5-14",
+			    "universityVerify" : "未审核",
+			    "universityVerifyTime" : "无"
+	       		} ,
+	       		{
+	       		"studentOrder":"6",
+	       		"stuStatusInfoId":"65" ,
+	           "name":"哈哈哈" ,
+	       		"stuNumber":"201502222" ,
+	       		"grade" : "2015" ,
+	       		"studentMajor":"软件",
+			    "studentCollege" :"软件学院",
+			    "studentUp" : "已提交",
+			    "studentUpTime" : "2015-5-12",
+			    "collegeVerify" : "已审核",
+			    "collegeVerifyTime" : "2015-5-14",
+			    "universityVerify" : "未审核",
+			    "universityVerifyTime" : "无"
+	       		} ,
+	       		{
+	       		"studentOrder":"7",
+	       		"stuStatusInfoId":"77" ,
+	           "name":"哈哈哈" ,
+	       		"stuNumber":"201502222" ,
+	       		"grade" : "2015" ,
+	       		"studentMajor":"软件",
+			    "studentCollege" :"软件学院",
+			    "studentUp" : "已提交",
+			    "studentUpTime" : "2015-5-12",
+			    "collegeVerify" : "已审核",
+			    "collegeVerifyTime" : "2015-5-14",
+			    "universityVerify" : "未审核",
+			    "universityVerifyTime" : "无"
+	       		} ,
+
+	       		{
+	       		"studentOrder":"8",
+	       		"stuStatusInfoId":"86" ,
+	           "name":"哈哈哈" ,
+	       		"stuNumber":"201502222" ,
+	       		"grade" : "2015" ,
+	       		"studentMajor":"软件",
+			    "studentCollege" :"软件学院",
+			    "studentUp" : "已提交",
+			    "studentUpTime" : "2015-5-12",
+			    "collegeVerify" : "已审核",
+			    "collegeVerifyTime" : "2015-5-14",
+			    "universityVerify" : "未审核",
+			    "universityVerifyTime" : "无"
+	       		} ,
+
+	           {
+	           	"studentOrder":"9",
+	           	"stuStatusInfoId":"5" ,
+	           "name":"哈哈哈" ,
+	       		"stuNumber":"201502222" ,
+	       		"grade" : "2015" ,
+	       		"studentMajor":"软件",
+			    "studentCollege" :"软件学院",
+			    "studentUp" : "已提交",
+			    "studentUpTime" : "2015-5-12",
+			    "collegeVerify" : "已审核",
+			    "collegeVerifyTime" : "2015-5-14",
+			    "universityVerify" : "未审核",
+			    "universityVerifyTime" : "无"
+	       		} ,
+
+	       		{
+	       		"studentOrder":"10",
+	       		"stuStatusInfoId":"21" ,
+	           "name":"呵呵呵" ,
+	       		"stuNumber":"20586222" ,
+	       		"grade" : "2015" ,
+	       		"studentMajor":"软件",
+			    "studentCollege" :"软件学院",
+			    "studentUp" : "已提交",
+			    "studentUpTime" : "2015-5-12",
+			    "collegeVerify" : "已审核",
+			    "collegeVerifyTime" : "2015-5-14",
+			    "universityVerify" : "未审核",
+			    "universityVerifyTime" : "2015-6-01"
+	       		} 
+	        ]
+} 

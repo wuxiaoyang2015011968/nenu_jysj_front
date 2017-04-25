@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>修改身份变更</title>
+	<title>修改学生申请原因</title>
+	<!--#include file="/nenu_jysj_front/pages/common/link.html" -->
+	<!--#include file="/nenu_jysj_front/pages/common/script.html" -->
+	<link rel="stylesheet" type="text/css" href="../../../resources/css/page/student_page/business_handling/alterIdentity.css">
+	<link rel="stylesheet" href="../../../resources/upload/css/zyupload-1.0.0.css " type="text/css">
+	<script type="text/javascript" src="../../../resources/upload/js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="../../../resources/upload/js/zyupload-1.0.0.js"></script>
+	<script type="text/javascript" src="../../../resources/js/module/dispatch/del.js"></script>
+</head>
+<body>
+	<!--#include file="/nenu_jysj_front/pages/common/header.html"  -->
+	<!-- 侧栏start -->
+	<!--#include file="/nenu_jysj_front/pages/common/Ssidebar.html"  -->
+	<!-- 侧栏end -->
+	<div class="alterIdentity">
+		<div class="identity">
+			<form action="#" method="post" enctype="multipart/form-data">
+				<div class="selection">
+					<span>变更类型</span>
+					<select id="identityOpt" name="">
+						<option value="-1">请选择</option>
+						<option value="1">定向解约</option>
+						<option value="2">委培解约</option>
+						<option value="3">免师解约</option>
+						<option value="4">免师跨省</option>
+					</select>
+				</div>
+				<!-- 上传文件start -->
+				<div class="block-content clearfix">
+					<ul class="clearfix material">
+						<li>
+							<img src="../../../resources/img/student_page/business_handling/1.jpg" alt="1.jpg"  class="J_thumbnail uploaded-img" title="点击图片可放大预览" />
+							<input type="text" style="display:none;width:136px;" value="">
+							<a href="javascript:;" class="delete"></a>
+						</li>
+						<li>
+							<img src="../../../resources/img/student_page/business_handling/2.jpg" alt="2.jpg" class="J_thumbnail uploaded-img" title="点击图片可放大预览"/>
+							<input type="text" style="display:none;width:136px;" value="">
+							<a href="javascript:;" class="delete"></a>
+						</li>
+					</ul>
+					<div id="zyupload" class="zyupload"></div> 
+				</div>
+				<!-- 上传文件end -->
+				<!-- 提示框内容start -->
+				<div class="scene none"></div>
+				<div class="hint-box change none">
+					<div class="hint-info clearfix">提示信息
+						<span class="close">X</span>
+					</div>
+					<div class="msg_box msg-box">
+						<p class="msg"></p>
+						<p class="hint1"></p>
+						<p class="hint2"></p>
+						<p class="hint3"></p>
+					</div>
+					<span class="close-button close">关闭</span>
+				</div>
+				<div class="delete-box  none">
+					<div class="delete-info clearfix">
+						<p>确认要删除此图片吗？</p>
+						<span class="close">X</span>
+					</div>
+					<span class="close-button confirm">确认</span>		
+					<span class="close-button close">取消</span>
+				</div>
+				<div class="pop-pic none J_pop_pic">
+					<img src=""/>
+					<a href="javascript:;" class="J_shut">关闭</a>
+				</div>
+				<!-- 提示框内容end -->
+				<div class="secSub">
+				 	<input value="修改变更" type="submit" id="identitybtn"/>
+				</div>
+			</form>
+		</div>
+		<div class="idFocus">
+			<div class="focContent">
+				<h2>提示：</h2>
+				<p>
+					需定向或委培协议，招生大表，解约函及解约金收据，或解约函中注明无解约金。需免师协议，解约函或跨省材料，解约金收据或解约函中注明无解约金。<span>文件名为材料内容说明，如 户口本人所在页</span>
+				</p>
+			</div>	
+		</div>
+	</div>
+	<script type="text/javascript">
+		    KISSY.use('module/sidebar',function(S){
+		        S.ready(function(){
+		            PW.module.Sidebar();
+		        });
+		    });
+		    KISSY.use('page/student_page/business_handling/alterIdentity',function(S){
+				S.ready(function(){
+					PW.page.student_page.business_handling.alterIdentity();
+				})
+			});
+
+		    // 判断空白提交
+            $(function(){
+	        	var identitybtn = $('#identitybtn');
+	       		identitybtn.click(
+					function(){
+						var selectedOpt = $("#identityOpt").find("option:selected").val();
+			        	if (selectedOpt == "-1") {
+		                    alert("请选择变更类型！");
+		                    return false;
+			        	};
+			        return ture;
+			  	});
+            })
+
+            // 判断空白提交
+	        window.onload = function(){
+	        	var input1 = document.getElementById('fileImage');
+	        	var identitybtn = document.getElementById('identitybtn');
+	        	
+		        identitybtn.onclick = function(){
+
+		        	var images = input1.value;
+		        	if (images == '') {
+	                    alert("请提交协议文件！");
+	                    return false;
+		        	};
+		        }
+
+	        }
+	</script>
+	<script>
+			$(function(){
+				// 初始化插件
+				$("#zyupload").zyUpload({
+					width            :   "100%",                 // 宽度
+					height           :   "150px",                 // 宽度
+					itemWidth        :   "140px",                 // 文件项的宽度
+					itemHeight       :   "115px",                 // 文件项的高度
+					url              :   "/student/dispatch/ajax/upload",  // 上传文件的路径
+					fileType         :   ["jpg","png","jpeg","bmp"],// 上传文件的类型
+					fileSize         :   5120000,                // 上传文件的大小
+					multiple         :   true,                    // 是否可以多个文件上传
+					dragDrop         :   true,                    // 是否可以拖动上传文件
+					tailor           :   true,                    // 是否可以裁剪图片
+					del              :   true,                    // 是否可以删除文件
+					finishDel        :   false,  				  // 是否在上传文件完成后删除预览
+					/* 外部获得的回调接口 */
+					onSelect: function(selectFiles, allFiles){    // 选择文件的回调方法  selectFile:当前选中的文件  allFiles:还没上传的全部文件
+						console.info("当前选择了以下文件：");
+						console.info(selectFiles);
+					},
+					onDelete: function(file, files){              // 删除一个文件的回调方法 file:当前删除的文件  files:删除之后的文件
+						console.info("当前删除了此文件：");
+						console.info(file.name);
+					},
+					onSuccess: function(file, response){          // 文件上传成功的回调方法
+						console.info("此文件上传成功：");
+						console.info(file.name);
+						console.info("此文件上传到服务器地址：");
+						console.info(response);
+						$("#uploadInf").append("<p>上传成功，文件地址是：" + response + "</p>");
+					},
+					onFailure: function(file, response){          // 文件上传失败的回调方法
+						console.info("此文件上传失败：");
+						console.info(file.name);
+					},
+					onComplete: function(response){           	  // 上传完成的回调方法
+						console.info("文件上传完成");
+						console.info(response);
+					}
+				});
+				
+			});
+		</script>
+</body>
+</html>

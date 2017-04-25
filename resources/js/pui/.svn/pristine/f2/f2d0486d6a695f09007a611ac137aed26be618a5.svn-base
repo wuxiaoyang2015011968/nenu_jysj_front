@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>验证用户名</title>
+    <script type="text/javascript" src="http://sf.pandawork.net/resources/js/app/site-config.js"></script>
+    <script type="text/javascript" src="http://sf.pandawork.net/resources/js/base/lib/kissy/seed.js"></script>
+</head>
+<body>
+    <h2>
+        常用的注册验证例子,默认自动拦截
+    </h2>
+    <form action="">
+        <p>
+            <label>用户名</label>
+            <input type="text" id="J_un">
+        </p>
+        <p>
+            <label for="">密码</label>
+            <input type="text" id="J_pwd" data-valid-rule="isPassword" data-valid-tip="a|b">
+        </p>
+        <p>
+            <label for="">CONFIRM密码</label>
+            <input type="text" id="J_pwd" data-valid-rule="isPassword & require(J_pwd) & equal(J_pwd)" data-valid-tip="再次输入密码 | 密码不匹配">
+        </p>
+        <button>submit</button>
+    </form>
+    <script type="text/javascript">
+        KISSY.use('mod/defender', function(S){
+            S.ready(function(){
+                var $ = S.all;
+                PW.defender('form', {
+                    theme: 'inline',
+                    items: [{
+                        queryName: '#J_usdfn',
+                        pattern: function(input, shell, form){
+                            var v = $(input).val();
+                            //this指针指向shell
+                            if(/asdf/.test(v)){
+                                S.IO({
+                                    url: 'form-tip.html',
+                                    type: 'get',
+                                    success: function(data){
+                                            shell.updateState('success')
+                                    },
+                                    error: function(){
+                                        shell.updateState('error');
+                                    }
+                                });
+                                /*return true;*/
+                            }else{
+                                return false;
+                            }
+
+                            return 'loading';
+                        },
+                        tip: '需要输入邮件格式|输入不正确或者已经注册过',
+                        async: true
+                    }]
+                })
+            });
+        })
+    </script>
+</body>
+</html>

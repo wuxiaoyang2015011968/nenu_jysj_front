@@ -1,0 +1,159 @@
+/*添加major-name/other-major类及之后的样式，修改origin类的样式*/
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "Microsoft Yahei";
+}
+body{
+	min-width: 622px;
+}
+.alertWrapper{
+	height: 60px;
+	margin-left: 10.4%;
+}
+.headTitle{
+	margin: 1% 0px 10px 15.6%;
+	font-size: 20px;
+}
+.J_complete-form{
+	margin: 0px 0px 0px 222px;
+	border: 1px solid #ccc;
+	padding: 50px 0px;
+}
+.divCommon{
+	width: 24.6%;
+	height: 28px;
+	padding: 20px 0px;
+	text-align: right;
+	float: left;
+}
+.selectCommon{
+	width: 584px;
+	height: 25px;
+	float: left;
+	padding: 20px 0px;
+}
+label{
+	display: inline-block;
+	width: 37%;
+	text-align: right;
+	vertical-align: middle;
+}
+input[type="text"]{
+	width: 47%;
+	height: 2em;
+}
+.J_stuName,.J_idNumber,.J_stuNumber,.J_candidateNum{
+	display: none;
+}
+.company{
+	clear: both;
+}
+.fontColor{
+	color: red;
+}
+select{
+	width: 47.678%;
+	height: 2.166em;
+}
+.areaFidle{
+	position: absolute;
+	background: #fff;
+    border: 1px solid #2679b5;
+    left: 45.8%;
+    top: 70.4%;
+    width: 57%;
+    max-height: 112px;
+    z-index: 2;
+    overflow-y: auto;
+}
+.position{
+	top: 64% !important;
+    left: 44.4% !important;
+    color: #000;
+}
+.areaFidle li {
+    cursor: pointer;
+    height: 28px;
+    line-height: 28px;
+
+}
+.local-code,.unit-code {
+	border: 0;
+	width: 50px !important;
+}
+.companyAddress{
+	width: 25%;
+	float: left;
+	padding: 1.6% 0 0 3%;
+	position: relative;
+}
+.clearfix{
+	clear: both;
+}
+.areaCode{
+	width: 16.5%;
+	float: left;
+	padding-top: 21px;
+}
+.weipei{
+	padding-left: 3.5%;
+}
+.shengyuan{
+	padding-left: 2.7%;
+}
+.origin{
+	width: 24.7%;
+	float: left;
+	/*padding: 1.6% 0 0 3.7%; 修改-----------------*/
+	padding: 1.6% 0 1.6% 3.7%;
+	position: relative;
+}
+.stuNum{
+	padding: 20px 0px;
+}
+.J_orientation{
+	display: none;
+}
+.submitWrapper{
+	clear: both;
+	text-align: right;
+	padding-top: 45px;
+	padding-right: 45px;
+}
+.newStudentSubmit{
+	width: 92px;
+	background: #6fb3e0;
+	border: 0;
+	color: white;
+	height: 32px;
+	font-size: 14px;
+}
+.change-sex label[for="male"],
+.change-sex label[for="female"]{
+	width: 5%;
+}
+.change-sex input{
+	margin-left: 13%;
+	vertical-align: -4px;
+}
+.major-name {
+	width:70%;
+}
+.major-name select {
+	width:17.5%;
+}
+.major-name label {
+	width:4.8%;
+	text-align: center;
+}
+.major-name .major-label {
+	width:12.4%;
+	text-align: right;
+}
+.other-major {
+	display:none; 
+}
+.other-major label {
+	width:34.7%;
+}

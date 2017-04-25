@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>form提示</title>
+    <script type="text/javascript" src="http://sf.pandawork.net/resources/js/app/site-config.js"></script>
+    <script type="text/javascript" src="http://sf.pandawork.net/resources/js/base/lib/kissy/seed.js"></script>
+</head>
+<body>
+    <h2>为form添加错误提示</h2>
+    <form action="" style="border: 1px solid #ccc;">
+        <div id="J_formTip" style="color: red; background: #ccc; display: none;">表单内容有误</div>
+        <p>
+            <label>邮件</label>
+            <input type="text" data-valid-rule="isEmail">
+        </p>
+        <button type="submit">submit</button>
+    </form>
+    <script type="text/javascript">
+        KISSY.use('mod/defender', function(S){
+            S.ready(function(){
+                PW.defender('form', {
+                    formErrorContainer:  '#J_formTip',
+                    theme: 'inline'
+                })
+            });
+        })
+    </script>
+</body>
+</html>

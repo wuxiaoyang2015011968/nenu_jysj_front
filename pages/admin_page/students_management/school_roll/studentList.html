@@ -1,0 +1,187 @@
+<!--黎星宇 学籍 学生列表 HTML-->
+<!-- 是否显示未提交学生变为是否显示未注册学生 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>学籍——学生列表</title>
+	<!--#include file="/nenu_jysj_front/pages/common/link.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/script.html"  -->
+	<link rel="stylesheet" type="text/css" href="/nenu_jysj_front/resources/css/page/admin_page/students_management/dispatch/studentList.css">
+
+</head>
+<body>
+	<!--#include file="/nenu_jysj_front/pages/common/header.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/Asidebar.html"  -->
+	<script type="text/javascript">
+	    KISSY.use('module/sidebar',function(S){
+	        S.ready(function(){
+	            PW.module.Sidebar();
+	        });
+	    });
+	</script>
+	<div class="content">
+	    <div class="remind"></div>
+		<div class="stu_query">
+			<h2 class="query_name">查询条件</h2>
+			<div class="query_selects clearfix">
+			<!-- 以下选项框默认选中第一个 -->
+			    <div class="each_query">
+					<span class="query_text">学生类型</span>
+					<select class="query_select" id="stuType">
+						<option value="" selected="selected">系统导入学生</option>
+						<option value="">管理员新增学生</option>
+						<option value="">管理员删除学生</option>
+					</select>
+				</div>
+				<div class="each_query">
+					<span class="query_text">性&emsp;&emsp;别</span>
+					<select class="query_select" id="sex">
+						<option value="" selected="selected">请选择</option>
+						<option value="">男</option>
+						<option value="">女</option>
+					</select>
+				</div>
+				<div class="each_query">
+					<span class="query_text">学&emsp;&emsp;院</span>
+					<select class="query_select" id="college">
+						<option value="-1" selected="selected">请选择</option>
+					</select>
+				</div>
+				<div class="each_query">
+					<span class="query_text">学&emsp;&emsp;历</span>
+					<select class="query_select" id="qualification">
+						<option value="-1" selected="selected">请选择</option>
+						<option value="">本科</option>
+						<option value="">研究生</option>
+					</select>
+				</div>
+				<div class="each_query">
+					<span class="query_text">师范生类型</span>
+					<select class="query_select" id="normalStu">
+						<option value="-1" selected="selected">请选择</option>
+						<option value="">公费师范生</option>
+						<option value="">普通师范生</option>
+						<option value="">非师范生</option>
+					</select>
+				</div>
+				<div class="each_query">
+					<span class="query_text">政治面貌</span>
+					<select class="query_select" id="politicalStand">
+						<option value="-1" selected="selected">请选择</option>
+					</select>
+				</div>
+
+				<div class="each_query">
+					<span class="query_text">副书记审核状态</span>
+					<select class="query_select" id="deputySecretaryCheckResult">
+						<option value="-1" selected="selected">请选择</option>
+						<option value="">已提交</option>
+						<option value="">未提交</option>
+					</select>
+				</div>
+
+				<div class="each_query addr">
+					<span class="query_text">生源地所在省</span>
+					<select class="query_select" id="province">
+						<option value="" selected="selected">请选择</option>
+					</select>
+				</div>
+				<div class="each_query major-name origin">
+					<span class="query_text major-label">专业名称</span>
+					<input class="major-id-unit major_code" type="hidden">
+					<input type="text" name="" class="major_input J_majorHolder" id="J_unitMajorHolder">
+					<ul class="none majorFidle" id="J_majorFidle_unit"></ul>
+					<p class="unitTip"></p>
+				</div>
+				<div class="each_query">
+					<span class="query_text">关键字</span>
+					<input type="text" placeholder="学生号、身份证号、姓名、考生号" value="" class="keyword_input" id="keyword" />
+				</div>
+				<div class="inputs">
+					<input type="button" value="查询" class="query btn" id="querybtn" /><input type="button" value="导出excel" class="excel btn" />
+				</div>
+			</div>
+		</div>
+		<div class="query_result">
+			<table>
+				<thead>
+				    <th>序号</th>
+				    <th style="display:none;">数据库ID</th>
+				    <th>姓名</th>
+				    <th>性别</th>
+				    <th>学号</th>
+				    <th>所在年级</th>
+				    <th>专业</th>
+				    <th>所在学院</th>
+				    <th>学院审核</th>
+				    <th>学院审核时间</th>
+				    <th>副书记审核</th>
+				    <th>副书记审核时间</th>
+				    <th>学校审核</th>
+				    <th>学校审核时间</th>
+				    <th>操作</th>
+				</thead>
+				<tbody id="J_template">
+
+				</tbody>
+			</table>
+			<div id="J_pagination">
+				<!-- 分页区域 -->
+			</div>
+		</div>
+	</div>
+	<script id="query-stuInfo" type="text/template">
+	{@each data as sturollInfo,index}
+		<tr>
+		    <td class="stuorder">&{++index}</td>
+		    <td style="display:none;" class="stuId">&{sturollInfo.id}</td>
+			<td>&{sturollInfo.name}</td>
+			<td>&{sturollInfo.sex}</td>
+			<td>&{sturollInfo.stuNumber}</td>
+			<td>&{sturollInfo.grade}</td>
+			<td>&{sturollInfo.major}</td>
+			<td>&{sturollInfo.college}</td>
+			<td>&{sturollInfo.counsellorCheckResult}</td>
+			<td>&{sturollInfo.counsellorCheckTime}</td>
+			<td>&{sturollInfo.deputySecretaryCheckResult}</td>
+			<td>&{sturollInfo.deputySecretaryCheckTime}</td>
+			<td>&{sturollInfo.schoolCheckResult	}</td>
+			<td>&{sturollInfo.schoolCheckTime}</td>
+			<td>
+				<a href="javascript:;" class="view">查看</a>
+				<a href="javascript:;">修改</a>
+				<a href="javascript:;" class="delete">删除</a>
+			</td>
+		</tr>
+	{@/each}
+	</script>
+	<script type="text/javascript">
+		KISSY.use('page/admin_page/students_management/school_roll/studentList', function(S) {
+			var urls = PW.Env.url.admin_page.students_management.school_roll.studentList;
+			var url = urls.showStu;//传出来的数据
+			console.log(url);
+			S.ready(function(){
+				PW.page.admin_page.students_management.school_roll.studentList({
+					renderTo: '#J_pagination', //分页显示指向
+					juicerRender: '#query-stuInfo', //模板渲染
+					dataRender: '#J_template', //模板的数据放的地方
+					pageSize:2,//每页显示的记录数
+					url: url,
+					/*发送ajax,必须指定ajax的url */
+					configUrl:function(url,page,me,prevdata){
+						    //var url = url + '/' + page;//套页时使用
+                            return url;
+                            // return url + page;
+                    },
+                    afterDataLoad:function(that,data,page) {
+                    	S.log(data.dataCount);
+                    },
+					type: 'get'
+				});
+				//console.log("ajaxing");
+			});
+		});
+	</script>
+</body>
+</html>

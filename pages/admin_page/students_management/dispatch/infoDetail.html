@@ -1,0 +1,330 @@
+<!-- 管理员的派遣信息详情页 廖月云 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>派遣信息详情</title>
+	<!--#include file="/nenu_jysj_front/pages/common/link.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/script.html"  -->
+	<link rel="stylesheet" type="text/css" href="../../../../resources/css/common/detail.css">
+</head>
+<body>
+	<div class="page">
+		<!--#include file="/nenu_jysj_front/pages/common/header.html"  -->
+		<!--#include file="/nenu_jysj_front/pages/common/Asidebar.html"  -->
+		<script type="text/javascript">
+		    KISSY.use('module/sidebar',function(S){
+		        S.ready(function(){
+		            PW.module.Sidebar();
+		        });
+		    });
+		</script>	
+		<div class="content">
+		
+			<div class="infomation">
+				<table>
+					<caption>
+						个人信息
+					</caption>
+					<tr>
+						<td>姓名</td>
+						<td>xxx</td>
+						<td>性别</td>
+						<td>xxx</td>
+						<td>学院</td>
+						<td>软件学院</td>
+						<td>专业</td>
+						<td>软件工程</td>
+					</tr>
+					<tr>
+						<td>身份证号</td>
+						<td>xxxxxxxxxxxxxxxxxx</td>
+						<td>学号</td>
+						<td>xxxxxxxxxx</td>
+						<td>培养方式</td>
+						<td></td>
+						<td>师范生类别</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>生源所在地</td>
+						<td>xxxxxxxxx</td>
+						<td>定向委培单位</td>
+						<td>xxxxxxxxxx</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+				<table>
+					<caption>
+						派遣签约信息表
+						<br/>
+						协议编号：<span>XXXXXXXXXX</span>
+					</caption>
+					<tr>
+						<td>姓名</td>
+						<td>xxx</td>
+						<td>性别</td>
+						<td>xxx</td>
+						<td>学院</td>
+						<td>软件学院</td>
+						<td>专业</td>
+						<td>软件工程</td>
+					</tr>
+					<tr>
+						<td>身份证号</td>
+						<td>xxxxxxxxxxxxxxxxxx</td>
+						<td>学号</td>
+						<td>xxxxxxxxxx</td>
+						<td>培养方式</td>
+						<td></td>
+						<td>师范生类别</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>生源所在地</td>
+						<td>xxxxxxxxx</td>
+						<td>定向委培单位</td>
+						<td>xxxxxxxxxx</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>毕业去向</td>
+						<td></td>
+						<td>签约单位名称</td>
+						<td>xxx</td>
+						<td>单位组织机构代码</td>
+						<td></td>
+						<td>单位所在地</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>单位性质</td>
+						<td></td>
+						<td>单位行业</td>
+						<td>xxx</td>
+						<td>单位隶属部门</td>
+						<td></td>
+						<td>工作职位类别</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>报道证签发类别</td>
+						<td></td>
+						<td>报到证迁往单位名称</td>
+						<td>xxx</td>
+						<td>报到证迁往单位算在地</td>
+						<td></td>
+						<td>档案转寄单位名称</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>档案转寄单位地址</td>
+						<td></td>
+						<td>档案转寄单位邮编</td>
+						<td>xxx</td>
+						<td>是否接受户口</td>
+						<td></td>
+						<td>是否接受档案</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>户口签转地</td>
+						<td></td>
+						<td>档案接收部门</td>
+						<td>xxx</td>
+						<td>档案接收联系人</td>
+						<td></td>
+						<td>档案接收联系人电话</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>单位联系人</td>
+						<td></td>
+						<td>联系人电话</td>
+						<td>xxx</td>
+						<td>联系人手机号码</td>
+						<td></td>
+						<td>联系人电子邮箱</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>联系人传真</td>
+						<td></td>
+						<td>单位地址</td>
+						<td>xxx</td>
+						<td>单位邮编</td>
+						<td></td>
+						<td>备注</td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<div class="show">
+				<table>
+					<caption>
+						审核结果
+					</caption>
+					<tr>
+						<td>级别</td>
+						<td>审核结果</td>
+						<td>理由</td>
+						<td>时间</td>
+						<td>操作人</td>
+						<td>操作</td>
+					</tr>
+					<tr id="counsellor">
+						<td class="check-level">学院</td>
+						<td class="check-result" value="weishenhe">未审核</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="edit-result">
+							<input type="button" value="修改结果" check-level="counsellor">
+						</td>
+					</tr>
+					<tr id="deputySecretary">
+						<td class="check-level">副书记</td>
+						<td class="check-result" value="weishenhe">未审核</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="edit-result">
+							<input type="button" value="修改结果" check-level="deputySecretary">
+						</td>
+					</tr>
+					<tr id="school">
+						<td class="check-level">学校</td>
+						<td class="check-result" value="weishenhe">未审核</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="edit-result">
+							<input type="button" value="修改结果" check-level="school">
+						</td>
+					</tr>
+					
+				</table>
+			</div>
+			<div>
+				<table>
+					<caption>
+						已申请业务项
+					</caption>
+					<tr>
+						<td>业务受理</td>
+						<td>变更类型</td>
+						<td>审核状态</td>
+						<td>时间</td>
+						<td>审核人</td>
+					</tr>
+					<tr>
+						<td>身份变更</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>申请新协议</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<div class="material clearfix">	
+				<strong class="material-show">材料展示</strong>
+				<ul class="material-pic clearfix">
+					<li>
+						<img src="../../../../resources/img/admin_page/business_handling/pic_show1.jpg">
+						<span>吃的呢吃的呢吃的呢吃的呢</span>
+					</li>
+					<li>
+						<img src="../../../../resources/img/admin_page/business_handling/pic_show2.jpg">
+						<span>吃的呢吃的呢吃的呢吃的呢</span>
+					</li>
+					<li>
+						<img src="../../../../resources/img/admin_page/business_handling/pic_show3.jpg">
+						<span>吃的呢吃的呢吃的呢吃的呢</span>
+					</li>
+				</ul>
+			</div>
+			<div class="pop-check">
+				<form action="javacsript:;" class="check">
+					<fieldset class="clearfix" style="position:relative;">
+						<input type="hidden" name="checkLevel"/>
+						<legend>审核状态</legend>
+						<span class="check-state">
+							<strong>
+								审核状态
+							</strong>
+							
+							<input type="radio" name="checkResult" value="2" checked ><label>通过</label>
+							<input type="radio" name="checkResult" value="3"><label>不通过</label>
+						</span>
+						<span class="check-reason">
+							<strong>
+								审核理由
+							</strong>
+							<select name="checkReason"> 
+								<option value="-1">请选择</option>
+								<option value="1" class="yes">信息属实</option>
+								<option value="2" class="not">修改师范生类型不通过，证明材料不充分</option>
+								<option value="3" class="not">修改生源地城市不通过，证明材料不充分</option>
+								<option value="4" class="not">修改委培方式不通过，证明材料不充分</option>
+								<option value="5" class="not">修改定向委培单位不通过，证明材料不充分</option>
+								<option value="6" class="not">个人信息有错误</option>
+								<option value="99">其他</option>
+							</select>
+							<input type="text" name="checkOther" class="check-other-input">
+						</span>
+						<div class="check-submit-line clearfix">
+							<input type="submit" value="确认修改" class="check-submit save-submit"></input>
+							<input type="button" value="返回" class="check-submit back"></input>
+						</div>
+					</fieldset>
+				</form>
+			</div> 
+			<div class="pop-pic">
+				<img src="">
+				<a href="javascript:;">关闭</a>
+			</div>
+			<div class="more-detail">
+				<a href="javascript:;" >办公信息</a>
+				<a href="javascript:;" >学籍信息</a>
+				<a href="javascript:;" class="next-student">下一个学生</a>
+			</div>
+			<!-- <form class="parameter-hidden">
+				<fieldset>
+					<legend>为下一个学生设置的隐藏域</legend>
+					<input type="hidden" name="id" />
+					<input type="hidden" name="curPage" />
+					<input type="hidden" name="idList" />
+					<input type="hidden" name="curNo" />
+					<input type="hidden" name="conditions" />
+				</fieldset>
+			</form> -->
+			<form class="parameter-hidden">
+				<fieldset>
+					<legend>为隐藏下一个学生设置的隐藏域</legend>
+					<input type="hidden" name="parameter" value="" class="parameter"/>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript">
+		KISSY.use('page/admin_page/students_management/dispatch/infoDetail',function(S){
+			S.ready(function(){
+				PW.page.admin_page.students_management.dispatch.infoDetail();
+			})
+		}) 
+	</script>
+</body>
+</html> 

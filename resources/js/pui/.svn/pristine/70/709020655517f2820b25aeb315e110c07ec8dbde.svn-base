@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>pagination</title>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<style type="text/css">
+			table{
+				width: 90%;
+				margin: 20px auto;
+			}
+			td, th{
+				border: 1px solid red;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>name</th>
+					<th>title</th>
+					<th>time</th>
+				</tr>
+			</thead>
+			<tbody id="J_template">
+				
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="4">
+						<button type="button" class="J_reload">点我reload分页</button>
+						<button type="button" class="J_toPage">点我toPage第5页</button>
+						<button type="button" class="J_nextPage">点我nextPage跳到下一页</button>
+						<button type="button" class="J_prevPage">点我prevPage跳到上一页</button>
+						<button type="button" class="J_firstPage">点我firstPage跳到第一页</button>
+						<button type="button" class="J_lastPage">点我lastPage跳到最后一页</button>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+		
+		<div id="J_pagination"></div>
+	</body>
+	<script id="tpl" type="text/template">
+    {@each list as it,index}
+    <tr>
+	    <td>&{it.id}</td>
+	    <td>&{it.name}</td>
+	    <td>&{it.title}</td>
+	    <td class="J_time">&{it.time}</td>
+    </tr>
+    {@/each}
+	</script>
+	<script type="text/javascript" src="../../config.js"></script>
+	<script type="text/javascript" src="http://pui.pandawork.net/1.1/lib/kissy/seed.js"></script>
+    <script type="text/javascript">
+        KISSY.use('mod/pagination,mod/moment', function(S) {
+            S.ready(function(){
+                var p = PW.pagination({
+                	queryName: '#J_pagination',//分页显示指向
+    				juicerRender: '#tpl',      //模版渲染指向
+    				dataRender: '#J_template',
+    				pageSize: 5,               //每页显示的记录数
+    				page: 1,                   //当前页码，默认是从第一页开始
+    				//themePackageURL: PW.libUrl+'js/base/plugins/pagination/theme/themes.json',
+    				themeName: 'd',//主题名称,有default,a,b,c,d,e这几种，默认是default
+    				url:'data.json', //必选，必须指定ajax的url
+    				type: 'get',     //可选，默认情况下是get
+    				configUrl:function(url,page,me,prevdata){
+    					//url:配置的url
+    					//page:当前页码
+    					//me:指向当前分页对象
+    					//prevdata:上一次的分页数据
+    					return url;
+    				}
+				});
+				var on = S.Event.on;
+                on('.J_reload', 'click', function(){
+                	p.reload({
+                		queryName: '#J_pagination',
+	    				juicerRender: '#tpl',
+	    				dataRender: '#J_template',
+	    				pageSize: 100,
+	    				url:'data.json',
+	    				configUrl:function(url,page,me,prevdata){
+	    					return url;
+	    				}
+                	});
+                });
+                on('.J_toPage', 'click', function(){
+                	p.toPage(5);
+                });
+                on('.J_nextPage', 'click', function(){
+                	p.nextPage();
+                });
+                on('.J_prevPage', 'click', function(){
+                	p.prevPage();
+                });
+                on('.J_firstPage', 'click', function(){
+                	p.firstPage();
+                });
+                on('.J_lastPage', 'click', function(){
+                	p.lastPage();
+                });
+            });
+        });
+    </script>
+</html>

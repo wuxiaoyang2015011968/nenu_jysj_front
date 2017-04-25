@@ -1,0 +1,9 @@
+{
+	"code": 0,
+	"data": [
+		{"majorCode":1,"majorName":"哲学"},
+		{"majorCode":2,"majorName":"工学"},
+		{"majorCode":3,"majorName":"农学"},
+		{"majorCode":4,"majorName":"医学"}
+	]
+}

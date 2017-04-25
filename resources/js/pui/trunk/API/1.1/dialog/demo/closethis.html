@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>closeThis实例</title>
+    <link type="text/css" rel="stylesheet" href="../../css/api.css"/>
+</head>
+<body>
+<p><input type="button" id="btn-test" value="closeThis"/></p>
+<script type="text/javascript" src="../../config.js"></script>
+<script type="text/javascript" src="http://pui.pandawork.net/1.1/lib/kissy/seed.js"></script>
+<script type="text/javascript">
+KISSY.use("core,mod/dialog",function(S){
+    var on = S.Event.on,get = S.DOM.get;
+        on(get("#btn-test"),"click",function(){
+            PW.mod.Dialog.setData(PW.mod.Dialog.id,{t:1});
+            PW.mod.Dialog.closeThis();
+        })
+})
+</script>
+</body>
+</html>

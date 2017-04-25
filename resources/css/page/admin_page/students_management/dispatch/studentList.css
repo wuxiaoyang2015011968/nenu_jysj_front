@@ -1,0 +1,172 @@
+/*---------------------------------------------------------------------------------------------
+@Filename: studentList.css
+@Description: 学院 学生列表 CSS定义
+@Version: 1.0.0(2016-07-12)
+@author: lixingyu
+2016-07-12:
+初始生成。
+2017-3-29
+修改了弹出框样式。
+--------------------------------------------------------------------------------------------*/
+.content {
+	min-width: 1000px;
+}
+.remind {
+    background: rgb(245, 245, 245);
+    border-bottom: 1px solid rgb(229, 229, 229);
+    color: red;
+    line-height: 32px;
+    min-height: 32px;
+    font-size: 16px;
+}
+.stu_query{
+	width: 90%;
+	margin: 10px auto;
+	margin-bottom: 40px;
+}
+.query_selects{
+	width: 95%;
+	padding: 0 0 2.5% 5%;
+	border: 1px solid rgb(204,204,204);
+	margin: 15px auto;
+}
+.query_name{
+    font-size: 20px;
+}
+.each_query{
+	width: auto;
+	height: 25px;
+	margin-right: 8%;
+	margin-top: 30px;
+	float: left;
+}
+.each_query .query_text{
+	font-size: 14px;
+	color: #333;
+	display: inline-block;
+	width: 100px;
+}
+.each_query .query_select{
+	width: 180px;
+	height: 25px;
+	line-height: 25px;
+	margin-left: 5px;
+	vertical-align: top;
+}
+.major_input{
+    width: 176px;
+    height: 21px;
+    line-height: 25px;
+    margin-left: 5px;
+    vertical-align: top;
+}
+#keyword{
+    width: 554px;
+    height: 23px;
+    margin-left: 5px;
+    padding-left: 5px;
+    border: 1px solid #ccc;
+}
+.inputs{
+	width: 220px;
+	float: right;
+	margin-right: 50px;
+	margin-top: 30px;
+}
+.btn{
+	width: 80px;
+	height: 30px;
+	border-radius: 4px;
+	font-size: 16px;
+	margin-right: 40px;
+}
+.excel{
+	margin: 0;
+}
+table{
+	width: 90%;
+	border: 1px solid #ef6;
+}
+thead th , tbody td{
+	padding: 10px 0;
+	height: 30px;
+}
+tbody td{
+	height: 20px;
+}
+tbody td a{
+	width: 40px;
+	height: 20px;
+	color: #fff;
+}
+tbody td a.state {
+	width: 60px;
+}
+tbody td a:hover{
+	color: yellow;
+}
+.page_count{
+	width: 90%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+.page_count a{
+	color: #333;
+	margin-left: 5px;
+}
+.page_count a:hover,.active{
+	color: darkred;
+}
+.show_page{
+	margin-left: 10px;
+	color: blue;
+}
+.stateBox{
+	position: fixed;
+    top: -1%;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 300%;
+}
+.stateBox .X{
+    width: 40px;
+    height: 40px;
+    background: darkred;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 500;
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.stateBox table{
+	width: 800px;
+	margin-top: 200px;
+}
+.stateBox table tr{
+	height: 30px;
+	background: white;
+}
+.majorFidle {
+    position: relative;
+    width: 260px;
+    background: #fff;
+    margin-left: 108px;
+    border: 1px solid #2679b5;
+    max-height: 560px;
+    overflow-y: auto;
+}
+.majorFidle li {
+    z-index: 99;
+    cursor: pointer;
+    height: 28px;
+    width: 180px;
+    line-height: 28px;
+}

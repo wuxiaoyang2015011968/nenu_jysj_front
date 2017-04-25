@@ -1,0 +1,78 @@
+<!--黎星宇 系统管理 上传数据 HTML-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>系统管理--未导入</title>
+	<!--#include file="/nenu_jysj_front/pages/common/link.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/script.html"  -->
+	<link rel="stylesheet" type="text/css" href="/nenu_jysj_front/resources/css/page/admin_page/system_management/notImport.css">
+	<script type="text/javascript" src="/nenu_jysj_front/resources/upload/js/jquery-1.7.2.js"></script>
+</head>
+<body>
+    <!--#include file="/nenu_jysj_front/pages/common/header.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/Asidebar.html"  -->
+	<script type="text/javascript">
+	    KISSY.use('module/sidebar',function(S){
+	        S.ready(function(){
+	            PW.module.Sidebar();
+	        });
+	    });
+	</script>	
+	<div class="content">
+	    <div class="remind"></div>
+		<div class="import_result">
+			<table>
+				<thead>
+				    <th>序号</th>
+				    <th>姓名</th>
+				    <th>身份证号</th>
+				    <th>导入失败原因</th>
+				</thead>
+				<tbody id="J_template">
+					
+				</tbody>
+			</table>
+			<div id="J_pagination">
+			</div>
+		</div>
+	</div>
+	<script id="notImportList" type="text/template">
+		{@each data as notImportList,index}
+			<tr>
+			    <td>&{++index}</td>
+			    <td>&{notImportList.Name}</td>
+				<td>&{notImportList.idCardNum}</td>
+				<td>&{notImportList.failReason}</td>
+			</tr>
+		{@/each}
+	</script>
+	<script type="text/javascript">
+		KISSY.use('page/admin_page/system_management/notImport', function(S) {
+			var urls = PW.Env.url.admin_page.system_management.notImport;
+			var url = urls.showImport;//传出来的数据
+			console.log(url);
+			S.ready(function(){
+				PW.page.admin_page.system_management.notImport({
+					renderTo: '#J_pagination', //分页显示指向
+					juicerRender: '#notImportList', //模板渲染
+					dataRender: '#J_template', //模板的数据放的地方
+					pageSize:10000,//每页显示的记录数
+					url: url,
+					/*发送ajax,必须指定ajax的url */
+					configUrl:function(url,page,me,prevdata){
+						    //var url = url + '/' + page;//套页时使用
+	                        return url;
+	                        // return url + page;
+	                },
+	                afterDataLoad:function(that,data,page) {
+	                	S.log(data.dataCount);
+	                },
+					type: 'get'
+				});
+				//console.log("ajaxing");
+			});
+		});
+	</script>
+</body>
+</html>

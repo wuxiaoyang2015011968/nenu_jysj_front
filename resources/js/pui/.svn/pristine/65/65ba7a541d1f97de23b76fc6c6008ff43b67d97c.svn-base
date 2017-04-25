@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>new Page</title>
+    <script src="../site-config.js"></script>
+    <script src="//pui.pandawork.net/resources/js/base/lib/kissy/seed.js"></script>
+</head>
+<body>
+        <input type="text">
+    <script>
+        KISSY.use('mod/calendar', function (S, Calendar) {
+            S.ready(function(){
+                Calendar = PW.mod.Calendar;
+                S.log(new Date(2014,0,5));
+                Calendar.client({
+                    renderTo: 'input', //默认只获取第一个
+                    select: {
+                        rangeSelect: false, //是否允许区间选择
+                        dateFmt: null,  //默认时间格式为 'YYYY-MM-DD HH:mm:ss' 如2013-10-31 14:23:45
+                                        //关于日期格式，参见pui docs: http://wp.pandawork.net/?p=37
+                        minDate: null, //传入与dateFmt相同格式的时间或js Date对象
+                        maxDate: null, //传入与dateFmt相同格式的时间或js Date对象
+                        showTime: true, //是否显示时间
+                        selected: '2013-10-3',  //传入与dateFmt相同格式的时间或js Date对象
+                        disabled: [new Date(2014,0,15), new Date(S.now() + 24*60*60*1000)]
+                    },
+                    style:{
+                        pages: 1, //显示日历页数
+                        popup: true, //是否允许日历弹出
+                        startWeek: 0, //一周开始时间, 默认为周日-0， 周一-1 , 以此类推
+                        startDay: new Date(S.now()),  //传入与dateFmt相同格式的时间或js Date对象
+                        closable: true //是否在点击之后关闭
+                    },
+                    events: {
+                        select: function(trigger, date){},//单个日历选择
+                        rangeSelect: function(trigger, startDate, endDate){}, //区间日历选择完成
+                        timeSelect: function(trigger,date){}, //时间选择完成
+                        monthChange: function(trigger,month){} //月份改变
+                    }
+                });
+            });
+        })
+    </script>
+</body>
+</html>

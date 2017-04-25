@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dialog</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link type="text/css" rel="stylesheet" href="../../css/api.css"/>
+</head>
+<body>
+ <h1>对话框实例</h1>
+ <p></p>
+  <div class="case">
+      <h2>alert------PW.mod.Dialog.alert(str,callback,{settings})</h2>
+      <ul>
+          <li>str:第一个参数，提示的内容（字符串）</li>
+          <li>callback:第二个参数，回调函数</li>
+          <li>{settings}:第三个参数，settings额外配置</li>
+          <li>返回对话框唯一ID</li>
+      </ul>
+      <p><input type="button" id="test-btn1" value="Try it"/></p>
+  </div>
+ <div class="case">
+     <h2>confirm------PW.mod.Dialog.confirm(str,okCbk,cancelCbk,{settings})</h2>
+     <ul>
+         <li>str:第一个参数，提示的内容（字符串）</li>
+         <li>okCbk:第二个参数，OK的回调函数</li>
+         <li>cancelCbk:第三个参数，cancel的回调函数</li>
+         <li>{settings}:第四个参数，settings额外配置</li>
+         <li>返回对话框唯一ID</li>
+     </ul>
+     <p><input type="button" id="test-btn2" value="Try it"/></p>
+ </div>
+ <div class="case">
+     <h2>prompt------PW.mod.Dialog.prompt(tip,orginalTxt,okCbk,{settings})</h2>
+     <ul>
+         <li>tip:第一个参数，提示的内容（字符串）</li>
+         <li>orginalTxt:第二个参数，初始文本</li>
+         <li>okCbk:第三个参数，OK的回调函数</li>
+         <li>{settings}:第四个参数，settings额外配置</li>
+         <li>返回对话框唯一ID</li>
+     </ul>
+     <p><input type="button" id="test-btn3" value="Try it"/></p>
+ </div>
+<script type="text/javascript" src="../../config.js"></script>
+<script type="text/javascript" src="http://pui.pandawork.net/1.1/lib/kissy/seed.js"></script>
+<script type="text/javascript">
+    KISSY.use("core,mod/dialog",function(S){
+         var on = S.Event.on,get = S.DOM.get;
+             /*测试内容*/
+         var dlgcontent={
+                alt:"alert success!",
+                cfm:"confirm success!",
+                pt:"prompt success!"
+              };
+             /*测试按钮*/
+         var  button=["#test-btn1","#test-btn2","#test-btn3"];
+         /*alert函数*/
+        on(get(button[0]),"click",function(){
+            PW.mod.Dialog.alert(dlgcontent.alt);
+        });
+        /*confirm函数*/
+        on(get(button[1]),"click",function(){
+            PW.mod.Dialog.confirm(dlgcontent.cfm);
+        });
+        /*prompt函数*/
+        on(get(button[2]),"click",function(){
+            PW.mod.Dialog.prompt(dlgcontent.pt,"originalTxt");
+        });
+    },{
+        requires:["core"]
+    })
+</script>
+</body>
+</html>

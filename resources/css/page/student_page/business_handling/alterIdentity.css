@@ -1,0 +1,273 @@
+.alterIdentity{
+	min-height: 600px;
+	margin-left: 192px;
+	background: none repeat scroll 0 0;
+}
+.identity{
+	width: 65%;
+	float: left;
+	margin-left: 80px;
+}
+.selection{
+	margin: 50px 0 100px 100px;
+}
+.selection select{
+	width: 286px;
+	height: 35px;
+}
+.selection span{
+	font-size: 16px;
+}
+.block-content{
+	border: 1px solid #ccc;
+    padding: 10px 0;
+}
+.material {
+    clear: both;
+    width: 660px;
+}
+.material li {
+    float: left;
+    height: 147px;
+    margin-left: 20px;
+    width: 140px;
+    position: relative;
+}
+.uploaded-img{
+	height: 106px;
+    width: 140px;
+}
+.material span {
+    display: block;
+    text-align: center;
+    width: 140px;
+}
+.block-content .control-area{
+	position: relative; 
+    margin-left: 27px;
+}
+.tip{
+    position: absolute;
+    top: 5%;
+    right: -15%;
+    width: 45px;
+    height: 45px;
+}
+.delete{
+    background: rgba(0, 0, 0, 0) url("../../../../img/common/ioc.png") no-repeat scroll -312px 0;
+    color: #666;
+    display: inline-block;
+    font-size: 18px;
+    height: 14px;
+    line-height: 14px;
+    position: absolute;
+    right: 11px;
+    top: 11px;
+    width: 14px !important;
+}
+/*搜索关键字样式*/
+.areaFidle{
+	position: absolute; 
+	background: #fff;
+    border: 1px solid #2679b5;
+    left: 44%;
+    top: 56%;
+    width: 70%;
+    height: 460px;
+    z-index: 2;
+    /*height: 56px;*/
+    overflow-y: auto;
+}
+.areaFidle li{
+    cursor: pointer;
+    height: 28px;
+    line-height: 28px;
+
+}
+.local-code,.unit-code{
+	border: 0;
+}
+/*修改公共(common.css)样式*/
+.control-area-short select, .control-area-normal select{
+    float: right;
+    width: 53%;
+
+}
+.control-area-short input[type="text"], .control-area-normal input[type="text"]{
+    float: right;
+    width: 51%;
+      margin-left: 15px;
+}
+.control-area .radio{
+    float: right;
+}
+.control-area input[type="radio"]{
+	margin:8px 7px 0 32px;
+    vertical-align: middle;
+}
+.choose{
+position: absolute;
+top: 10px;
+}
+.textTheme{
+	margin-left: 0;
+    padding: 3px 3px;
+    border: 1px solid #d5d5d5;
+}
+.control-area-short, .control-area-normal{
+    width: 22.8%;
+    min-height: 65px;
+    padding: 0;
+}
+.control-area-short label, .control-area-normal label{
+    width: 45%;
+}
+.control-area label{
+    float: left;
+    position: absolute;
+    top: -2px;
+    right: 0;
+}
+.control-area span{
+    padding: 0 3px;
+}
+.control-area .choose{
+    float: right;
+}
+.control-area span a{
+    text-decoration: underline;
+}
+.control-area .h{
+    float: right;
+    padding: 5px 3px;
+}
+/*提示信息弹出框样式*/
+.hint-box,.delete-box{
+	position: fixed;
+	top: 30%;
+	left: 38%;
+	background: #fff;
+	width: 477px;
+	height: 305px;
+	box-shadow: 0 0 30px;
+	font-size: 12px;
+	z-index: 1000;
+}
+.hint-box > div:first-child ,.delete-box > div:first-child{
+	border: 1px solid #ddd;
+    height: 34px;
+    padding: 5px 20px;
+    color: #fff;
+    background: rgb(67,142,185);
+}
+.delete-info span,.hint-info span{
+	float: right;
+	cursor: pointer;
+}
+.hint-box p{
+	vertical-align: center;
+	font-size: 14px;
+}
+.control-area p{
+    display: none;
+    position: absolute;
+    left: 47%;
+    top: 43%;
+    color: red;
+}
+.close-button{
+	display: inline-block;
+	width: 120px;
+	height: 28px;
+	line-height: 28px;
+    background-color: #438eb9 !important;
+    border: 0 solid #438eb9;
+    color: #ffffff;
+    border: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 176px;
+}
+.scene{
+	background: rgba(0,0,0,0.6);
+	filter:alpha(opacity=60);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+/*确认删除弹出框样式*/
+.delete-box{
+    width: 405px;
+    height: 158px;
+}
+.delete-box p{
+	float: left;
+	color: #ffffff;
+	font-size: 24px;
+}
+.delete-box .close-button{
+	float: left;
+	width: 80px;
+	margin: 38px 60px;
+}
+/*上传图片展示样式*/
+.pop-pic{
+    top: 30%;
+    left: 18%;
+    width: 60%;
+    height: 83%;
+    text-align: center;
+}
+.pop-pic{
+    position: absolute;
+    background-color: #000;
+    background: rgba(0,0,0,.6);
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7FFFFFFF,endcolorstr=#7FFFFFFF);
+    z-index: 1;
+}
+.pop-pic img{
+    width: 80%;
+    height: 80%;
+    margin-top: 50px;
+}
+.pop-pic a{
+    display: block;
+    width: 100px;
+    height: 30px;
+    margin: 30px auto;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #707070;
+    background-color: #f9f9f9;
+    color: #707070;
+}
+.idFocus{
+	float: right;
+    height: 280px;
+    margin-top: 179px;
+    width: 25%;
+}
+.focContent{
+	margin-left: 20px;
+	font-size: 20px;
+}
+.idFocus span{
+	color: red;
+}
+.secSub{
+	width: 85%;
+	height: 50px;
+	margin-left: 391px; 
+}
+.secSub input{
+	width: 140px;
+	margin-top: 176px;
+	height: 35px;
+	background: rgb(111, 179, 224) none repeat scroll 0 0;
+    border: 0 none;
+    color: #fff;
+}

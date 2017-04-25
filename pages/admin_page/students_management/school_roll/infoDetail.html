@@ -1,0 +1,270 @@
+<!-- 管理员的学籍信息详情页 廖月云 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>学籍信息详情</title>
+	<!--#include file="/nenu_jysj_front/pages/common/link.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/script.html"  -->
+	<link rel="stylesheet" type="text/css" href="../../../../resources/css/common/detail.css">
+</head>
+<body>
+	<div class="page">
+		<!--#include file="/nenu_jysj_front/pages/common/header.html"  -->
+		<!--#include file="/nenu_jysj_front/pages/common/Asidebar.html"  -->
+		<script type="text/javascript">
+		    KISSY.use('module/sidebar',function(S){
+		        S.ready(function(){
+		            PW.module.Sidebar();
+		        });
+		    });
+		</script>	
+		<div class="content">
+			<div class="infomation">
+				<table>
+				<caption>
+					<span>xxx</span>学籍信息表
+				</caption>
+				<tr>
+					<td>姓名</td>
+					<td>xxx</td>
+					<td>性别</td>
+					<td>女</td>
+					<td>民族</td>
+					<td>回族</td>
+					<td>政治面貌</td>
+					<td>党员</td>
+				</tr>
+				<tr>
+					<td>考生号</td>
+					<td>11111111111111</td>
+					<td>身份证号</td>
+					<td>64012119950209xxxx</td>
+					<td>学号</td>
+					<td>2013012680</td>
+					<td>学校</td>
+					<td>东北师范大学</td>
+				</tr>
+				<tr>
+					<td>学制</td>
+					<td>4</td>
+					<td>学历</td>
+					<td>本科生毕业</td>
+					<td>所在院校/分院</td>
+					<td>信息与软件工程学院</td>			
+					<td>所在年级</td>
+					<td>2013</td>
+				</tr>
+				<tr>
+					<td>师范生类别</td>
+					<td>非师范生</td>
+					<td>培养方式</td>
+					<td>定向</td>
+					<td>入学日期</td>
+					<td>2013-09-01</td>
+					<td>毕业日期</td>
+					<td>2017-07-1</td>
+				</tr>
+				<tr>
+					<td>毕业去向</td>
+					<td>就业</td>
+					<td>困难生类别</td>
+					<td></td>
+					<td>档案是否转入学校</td>
+					<td>是</td>
+					<td>户口是否转入学校</td>
+					<td>否</td>
+				</tr>
+				<tr>
+					<td>手机号码1</td>
+					<td>13331660692</td>
+					<td>手机号码2</td>
+					<td>无</td>
+					<td>QQ号码</td>
+					<td>836119679</td>
+					<td>微信号</td>
+					<td>lanche</td>
+				</tr>
+				<tr>
+					<td>家庭电话</td>
+					<td></td>
+					<td>亲属联系方式</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>生源地类别</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>专业名称</td>
+					<td colspan="3">生化与药品大类-生物技术类-生物技术及应用</td>
+					<td>生源所在地</td>
+					<td colspan="3">宁夏银川市兴庆区</td>
+				</tr>
+				<tr>
+					<td>入学前档案所在单位</td>
+					<td colspan="3"></td>
+					<td>入学前户口所在地</td>
+					<td colspan="3">宁夏银川市兴庆区</td>
+				</tr>
+				<tr>
+					<td>常用电子邮箱</td>
+					<td colspan="3">lancheme@foxmail.com</td>
+					<td>家庭地址</td>
+					<td colspan="3"></td>
+				</tr>
+				<tr>
+					<td>定向委培单位地址</td>
+					<td colspan="3"></td>
+					<td>定向委培单位</td>
+					<td colspan="3"></td>
+				</tr>
+			</table>
+			</div>
+			<div>
+				<table>
+					<caption>
+						参考项修改信息详情
+					</caption>
+					<tr>
+						<td>序号</td>
+						<td>修改项</td>
+						<td>原信息</td>
+						<td>改后信息</td>
+						<td>修改时间</td>
+					</tr>
+					<tr id="school">
+						<td class="check-level">学校</td>
+						<td class="check-result" value="weishenhe">未审核</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+			<div class="show">
+				<table>
+					<caption>
+						审核结果
+					</caption>
+					<tr>
+						<td>级别</td>
+						<td>审核结果</td>
+						<td>理由</td>
+						<td>时间</td>
+						<td>操作人</td>
+						<td>操作</td>
+					</tr>
+					<tr id="counsellor">
+						<td class="check-level">学院</td>
+						<td class="check-result" value="weishenhe">未审核</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="edit-result">
+							<input type="button" value="修改结果" check-level="counsellor">
+						</td>
+					</tr>
+					<tr id="deputySecretary">
+						<td class="check-level">副书记</td>
+						<td class="check-result" value="weishenhe">未审核</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="edit-result">
+							<input type="button" value="修改结果" check-level="deputySecretary">
+						</td>
+					</tr>
+					<tr id="school">
+						<td class="check-level">学校</td>
+						<td class="check-result" value="weishenhe">未审核</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="edit-result">
+							<input type="button" value="修改结果" check-level="school">
+						</td>
+					</tr>
+					
+				</table>
+			</div>
+			<div class="material clearfix">	
+				<strong class="material-show">材料展示</strong>
+				<ul class="material-pic clearfix">
+					<li>
+						<img src="../../../../resources/img/admin_page/business_handling/pic_show1.jpg">
+						<span>吃的呢吃的呢吃的呢吃的呢</span>
+					</li>
+					<li>
+						<img src="../../../../resources/img/admin_page/business_handling/pic_show2.jpg">
+						<span>吃的呢吃的呢吃的呢吃的呢</span>
+					</li>
+					<li>
+						<img src="../../../../resources/img/admin_page/business_handling/pic_show3.jpg">
+						<span>吃的呢吃的呢吃的呢吃的呢</span>
+					</li>
+				</ul>
+			</div>
+			<div class="pop-check">
+				<form action="javacsript:;" class="check">
+					<fieldset class="clearfix" style="position:relative;">
+						<input type="hidden" name="id" value=""/>
+						<input type="hidden" name="checkLevel"/>
+						<legend>审核状态</legend>
+						<span class="check-state">
+							<strong>
+								审核状态
+							</strong>
+							
+							<input type="radio" name="checkResult" value="2" checked ><label>通过</label>
+							<input type="radio" name="checkResult" value="3"><label>不通过</label>
+						</span>
+						<span class="check-reason">
+							<strong>
+								审核理由
+							</strong>
+							<select name="checkReason"> 
+								<option value="-1">请选择</option>
+								<option value="1" class="yes">信息属实</option>
+								<option value="2" class="not">修改师范生类型不通过，证明材料不充分</option>
+								<option value="3" class="not">修改生源地城市不通过，证明材料不充分</option>
+								<option value="4" class="not">修改委培方式不通过，证明材料不充分</option>
+								<option value="5" class="not">修改定向委培单位不通过，证明材料不充分</option>
+								<option value="6" class="not">个人信息有错误</option>
+								<option value="99">其他</option>
+							</select>
+							<input type="text" name="checkOther" class="check-other-input">
+						</span>
+						<div class="check-submit-line clearfix">
+							<input type="submit" value="确认修改" class="check-submit save-submit"></input>
+							<input type="button" value="返回" class="check-submit back"></input>
+						</div>
+					</fieldset>
+				</form>
+			</div> 
+			<div class="pop-pic">
+				<img src="">
+				<a href="javascript:;">关闭</a>
+			</div>
+			<div class="more-detail">
+				<a href="javascript:;" >办公信息</a>
+				<a href="javascript:;" >学籍信息</a>
+				<a href="javascript:;" class="next-student">下一个学生</a>
+			</div>
+			<form class="parameter-hidden">
+				<fieldset>
+					<legend>为隐藏下一个学生设置的隐藏域</legend>
+					<input type="hidden" name="parameter" value="0" class="parameter"/>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript">
+		KISSY.use('page/admin_page/students_management/school_roll/infoDetail',function(S){
+			S.ready(function(){
+				PW.page.admin_page.students_management.school_roll.infoDetail();
+			})
+		}) 
+	</script>
+</body>
+</html> 

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dialog配置设定</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link type="text/css" rel="stylesheet" href="../../css/api.css"/>
+</head>
+<body>
+<h1>对话框dialog方法</h1>
+<p></p>
+
+<div class="case">
+    <h2>配置项：param</h2>
+    <ul>
+        <li>基本配置:<pre>
+            {
+            width : 600,
+            height : 'auto',
+            position : 'absolute',
+            left : 'center',
+            top : 200,
+            zIndex: 200,
+            topLayer: 0,
+            //表现
+            theme : 'a',
+            //内容
+            _x_:true,
+            header: true,
+            icon : undefined,
+            title : '新建窗口',
+            content : '没有任何内容',
+            contentFrame : undefined,
+            frameScroll: 'no',
+            footer : undefined,
+            _dlgCtrlId:null,
+            hasOverlay: true,
+            maskColor: '#000',
+            maskOpacity: .6,
+            maskCursor: 'wait'
+            }
+        </pre>
+            <p><label><input type="button" id="test-btn12" value="Try it"/></label></p>
+         </li>
+        <li>事件配置:
+            <pre>
+        {
+            onClick: EMPTY_FUNCTION,
+            beforeOpen: EMPTY_FUNCTION,
+            afterOpen: EMPTY_FUNCTION,
+            beforeClose: EMPTY_FUNCTION,
+            afterClose: EMPTY_FUNCTION
+        }
+        </pre>
+            <p><label><input type="button" id="test-btn1" value="Try it"/></label></p>
+         </li>
+        <li>带有footer的配置：<pre>{
+            title:"dlg2",
+            content:"content ",
+            height:340,
+            footer:{
+              btns:[
+                {
+                text: '确定',
+                clickHandler: function(e,me){
+                   me.close();
+                  }
+                },
+               {
+                text: '取消',
+                clickHandler: function(e,me){
+                  me.close();
+                }
+              }]
+             }
+            }
+           </pre>
+            <p><label><input type="button" id="test-btn10" value="Try it"/></label></p>
+        </li>
+        <li>带有页面contentFrame的配置：<pre>
+            {
+             title:"dlg1",
+             contentFrame:"http://pui.pandawork.net/API/1.0/dialog/demo/closeThis.html",
+             beforeClose:function(event,me){
+               var dlg = PW.dialog.getData(me.id);
+                alert(dlg.t);
+             },
+            afterClose:null
+            }
+        </pre>
+            <p><label><input type="button" id="test-btn11" value="Try it"/></label></p>
+        </li>
+    </ul>
+
+</div>
+<div class="case">
+    <h2>1.open------PW.dialog.open(param)</h2>
+    <ul>
+        <li>param:传入对话框的参数</li>
+        <li>return 返回对话框</li>
+    </ul>
+    <p><label><input type="button" id="test-btn13" value="Try it"/></label></p>
+</div>
+<div class="case">
+    <h2>2.close------PW.dialog.close(id)</h2>
+    <ul>
+        <li>id:要关闭的对话框ID</li>
+    </ul>
+    <p><input type="button" id="test-btn2" value="Try it"/></p>
+</div>
+<div class="case">
+    <h2>3.closeAll------PW.dialog.closeAll()</h2>
+    <ul>
+        <li>关闭所有窗口</li>
+    </ul>
+  <p><input type="button" id="test-btn3" value="Try it"/></p>
+</div>
+<div class="case">
+    <h2>4.closeThis------PW.dialog.closeThis()</h2>
+    <ul>
+        <li>为iframe类型窗口提供内部关闭渠道</li>
+    </ul>
+    <p><input type="button" id="test-btn4" value="Try it"/></p>
+</div>
+<div class="case">
+    <h2>5.setData------PW.dialog.setData(id,data)</h2>
+    <ul>
+        <li>id:第一个参数，对话框id</li>
+        <li>data:第二个参数，设置对话框的数据</li>
+    </ul>
+    <p><input type="button" id="test-btn5" value="Try it"/></p>
+</div>
+<div class="case">
+    <h2>6.getData------PW.dialog.getData(id)</h2>
+    <ul>
+        <li>id:第一个参数，对话框id</li>
+        <li>返回对话框中的数据</li>
+    </ul>
+    <p><input type="button" id="test-btn6" value="Try it"/></p>
+</div>
+<div class="case">
+    <h2>7.alert------PW.dialog.alert(str,callback,{settings})</h2>
+    <ul>
+        <li>str:第一个参数，提示的内容（字符串）</li>
+        <li>callback:第二个参数，回调函数</li>
+        <li>{settings}:第三个参数，settings额外配置，例：{
+            left: 'cetner',
+            top: 'center',
+            width: 160,
+            title: 'alert',
+            header: false,
+            zIndex: 1000
+            }</li>
+        <li>返回对话框唯一ID</li>
+    </ul>
+    <p><input type="button" id="test-btn7" value="Try it"/></p>
+</div>
+<div class="case">
+    <h2>8.confirm------PW.dialog.confirm(str,okCbk,cancelCbk,{settings})</h2>
+    <ul>
+        <li>str:第一个参数，提示的内容（字符串）</li>
+        <li>okCbk:第二个参数，OK的回调函数</li>
+        <li>cancelCbk:第三个参数，cancel的回调函数</li>
+        <li>{settings}:第四个参数，settings额外配置,例：{
+            left: 'cetner',
+            top: 'center',
+            width: 160,
+            height:240,
+            title: 'confirm',
+            header: false,
+            zIndex: 1000
+            }</li>
+        <li>返回对话框唯一ID</li>
+    </ul>
+    <p><input type="button" id="test-btn8" value="Try it"/></p>
+</div>
+<div class="case">
+    <h2>9.prompt------PW.dialog.prompt(tip,orginalTxt,okCbk,{settings})</h2>
+    <ul>
+        <li>tip:第一个参数，提示的内容（字符串）</li>
+        <li>orginalTxt:第二个参数，初始文本</li>
+        <li>callback:第三个参数，回调函数</li>
+        <li>{settings}:第四个参数，settings额外配置,例：{
+            left: 'cetner',
+            top: 'center',
+            width: 400,
+            height:120,
+            title: 'prompt',
+            header: false,
+            zIndex: 1000
+            }</li>
+        <li>返回对话框唯一ID</li>
+    </ul>
+    <p><input type="button" id="test-btn9" value="Try it"/></p>
+</div>
+<script type="text/javascript" src="../../config.js"></script>
+<script type="text/javascript" src="http://pui.pandawork.net/resources/js/base/lib/kissy/seed.js"></script>
+<script type="text/javascript">
+    KISSY.use("core,mod/dialog",function(S){
+        var on = S.Event.on,get = S.DOM.get;
+        /*测试内容*/
+        var dlgcontent={
+            alt:"alert success!",
+            cfm:"confirm success!",
+            pt:"prompt success!"
+        };
+        /*测试按钮*/
+        var  button=[];
+        /*初始化按钮*/
+        for(var i=1;i<24;i++){
+            var p = "#test-btn"+i;
+            button.push(get(p)||{});
+        }
+        /*open方法*/
+        on(button[0],"click",function(){
+              PW.dialog.open({
+                  onClick:function(){
+                  },
+                  beforeOpen: function(){
+                      var aldg = PW.dialog.alert("打开窗口前");
+                  },
+                  afterOpen: function(){PW.dialog.alert("打开窗口后")},
+                  beforeClose: function(){PW.dialog.alert("关闭窗口前")},
+                  afterClose: function(){PW.dialog.alert("关闭窗口后")}
+              });
+        });
+        on(button[9],"click",function(){
+            var dlg2 = PW.dialog.open({title:"dlg2",content:"content ",height:340,footer:{
+                btns:[{
+                    text: '确定',
+                    clickHandler: function(e,me){
+                        me.close();
+                    }
+                },{
+                    text: '取消',
+                    clickHandler: function(e,me){
+                        me.close();
+                    }
+                }]
+            }});
+        });
+        on(button[10],"click",function(){
+            var dlg1 =  PW.dialog.open({title:"dlg1",contentFrame:"http://pui.pandawork.net/API/1.0/dialog/demo/closeThis.html",beforeClose:function(event,me){
+                var dlg = PW.dialog.getData(me.id);
+                alert(dlg.t);
+            }});
+
+        })
+        on(button[11],"click",function(){
+            PW.dialog.open( {
+                title:"title",
+                content:"content",
+                width:120,
+                height:320,
+                top:120,
+                left:240
+            })
+        })
+        on(button[12],"click",function(){
+            PW.dialog.open( {
+                title:"title",
+                content:"content",
+                width:120,
+                height:320,
+                top:120,
+                left:240
+            })
+        })
+        /*close方法*/
+        on(button[1],"click",function(){
+            var dlg1 =  PW.dialog.open({title:"dlg1"});
+            var dlg2 = PW.dialog.open({title:"dlg2",height:340});
+            var id = dlg2.id;
+           PW.dialog.alert("是否关闭dlg2",function(){
+                PW.dialog.close(id);
+            },{
+                top:200
+           });
+        });
+        /*closeAll方法*/
+        on(button[2],"click",function(){
+            var dlg1 =  PW.dialog.open({title:"dlg1",top:100 });
+            var dlg2 =  PW.dialog.open({title:"dlg2",top:300});
+            var dlg3 =  PW.dialog.open({title:"dlg3",top:500});
+            PW.dialog.alert("是否关闭所有窗口",function(){PW.dialog.closeAll()});
+        });
+        /*closeThis方法*/
+        on(button[3],"click",function(){
+            var dlg1 =  PW.dialog.open({title:"dlg1",contentFrame:"http://pui.pandawork.net/API/1.0/dialog/demo/closeThis.html",beforeClose:function(event,me){
+               var dlg = PW.dialog.getData(me.id);
+                alert(dlg.t);
+            }});
+
+        });
+        /*setData方法*/
+        on(button[4],"click",function(){
+            var dlg = PW.dialog.open("打开设置数据的窗口"),
+                    id = dlg.id;
+            PW.dialog.setData(id,{title:1});
+        });
+        /*getData方法*/
+        on(button[5],"click",function(){
+            var dlg = PW.dialog.open("打开取数据的窗口");;
+            var id = dlg.id;
+               PW.dialog.setData(id,{title:1});
+               alert("获取的数据为："+PW.dialog.getData(id).title);
+        });
+        /*alert方法*/
+        on(button[6],"click",function(){
+            PW.dialog.alert("alert",function(){
+                alert("执行回调函数！")
+            },{
+                left: 'cetner',
+                top: 'center',
+                width: 160,
+                title: 'alert',
+                header: false,
+                zIndex: 1000
+            });
+        });
+        //confirm方法
+        on(button[7],"click",function(){
+            PW.dialog.confirm("confirm",function(){
+                alert("执行OK的回调函数");
+            },function(){
+                alert("执行cancel的回调函数")
+            },{
+                left: 'cetner',
+                top: 'center',
+                width: 160,
+                height:240,
+                title: 'confirm',
+                header: false,
+                zIndex: 1000
+            });
+        });
+        //prompt方法
+        on(button[8],"click",function(){
+            PW.dialog.prompt("prompt","初始文本",function(){
+                alert("执行回调函数")
+            },
+            {
+                    left: 'cetner',
+                    top: 'center',
+                    width: 400,
+                    height:120,
+                    title: 'prompt',
+                    header: false,
+                    zIndex: 1000
+            });
+        });
+    },{
+        requires:["core"]
+    })
+</script>
+</body>
+</html>

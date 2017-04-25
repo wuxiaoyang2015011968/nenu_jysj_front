@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>charts</title>
+        <script src="../site-config.js"></script>
+        <script src="//pui.pandawork.net/resources/js/base/lib/kissy/seed.js"></script>
+    </head>
+    <body>
+        <div id="charts1">
+            1
+        </div>        
+        <div id="charts2">
+            2
+        </div>        
+        <script>
+            KISSY.use('mod/charts', function(S){
+                S.ready(function(){
+                    //设置highcharts全局变量
+                    PW.mod.Charts.setOptions(/*config*/);
+
+                    //实例化一个highcharts
+                    var hc = PW.mod.Charts.client({
+                        renderTo: '#charts1',
+                        chart: {
+                            type: 'area'
+                        },
+                        title: {
+                            text: 'Area chart with negative values'
+                        },
+                        xAxis: {
+                            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                        },
+                        credits: {
+                            enabled: false
+                        },
+                        series: [{
+                            name: 'John',
+                            data: [5, 3, 4, 7, 2]
+                        }, {
+                            name: 'Jane',
+                            data: [2, -2, -3, 2, 1]
+                        }, {
+                            name: 'Joe',
+                            data: [3, 4, 4, -2, 5]
+                        }]
+                    })
+
+                    S.log(hc);
+                    //hc.series[0].addPoint(1000);
+                    S.log(PW.mod.Charts);
+                })
+            })
+        </script>
+    </body>
+</html>

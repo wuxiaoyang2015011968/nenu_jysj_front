@@ -1,0 +1,16 @@
+{
+	"code": 0,
+	"data": [
+		{"majorCode":1,"majorName":"哲学"},
+		{"majorCode":2,"majorName":"经济学"},
+		{"majorCode":3,"majorName":"法学"},
+		{"majorCode":4,"majorName":"文学"},
+		{"majorCode":5,"majorName":"历史学"},
+		{"majorCode":6,"majorName":"理学"},
+		{"majorCode":7,"majorName":"工学"},
+		{"majorCode":8,"majorName":"农学"},
+		{"majorCode":9,"majorName":"医学"},
+		{"majorCode":10,"majorName":"管理学"},
+		{"majorCode":11,"majorName":"艺术"}
+	]
+}

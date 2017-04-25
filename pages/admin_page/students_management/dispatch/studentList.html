@@ -1,0 +1,270 @@
+<!--黎星宇 派遣 学生列表 HTML-->
+<!-- 是否显示未提交学生变为是否显示未注册学生 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>派遣——学生列表</title>
+	<!--#include file="/nenu_jysj_front/pages/common/link.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/script.html"  -->
+	<link rel="stylesheet" type="text/css" href="/nenu_jysj_front/resources/css/page/admin_page/students_management/dispatch/studentList.css">
+
+</head>
+<body>
+	<!--#include file="/nenu_jysj_front/pages/common/header.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/Asidebar.html"  -->
+	<script type="text/javascript">
+	    KISSY.use('module/sidebar',function(S){
+	        S.ready(function(){
+	            PW.module.Sidebar();
+	        });
+	    });
+	</script>
+	<div class="content">
+	    <div class="remind"></div>
+		<div class="stu_query">
+			<h2 class="query_name">查询条件</h2>
+			<form class="query_selects clearfix">
+			<!-- 以下选项框默认选中第一个 -->
+			    <div class="each_query">
+					<span class="query_text">学生类型</span>
+					<select class="query_select" id="stuType">
+						<option value="" selected="selected">系统导入学生</option>
+						<option value="">管理员新增学生</option>
+						<option value="">管理员删除学生</option>
+					</select>
+				</div>
+
+				<div class="each_query">
+					<span class="query_text">性&emsp;&emsp;别</span>
+					<select class="query_select" id="sex">
+						<option value="-1" selected="selected">请选择</option>
+						<option value="1" selected="selected">男</option>
+						<option value="2" selected="selected">女</option>
+					</select>
+				</div>
+				<div class="each_query">
+					<span class="query_text">学&emsp;&emsp;院</span>
+					<select class="query_select" id="depsOrMajors">
+						<option value="-1" selected="selected">请选择</option>
+					</select>
+				</div>
+				<div class="each_query">
+					<span class="query_text">学&emsp;&emsp;历</span>
+					<select class="query_select" id="qualificationId">
+						<option value="-1" selected="selected">请选择</option>
+						<option value="">本科</option>
+						<option value="">研究生</option>
+					</select>
+				</div>
+				<div class="each_query">
+					<span class="query_text">师范生类型</span>
+					<select class="query_select" id="normalStuId">
+						<option value="-1" selected="selected">请选择</option>
+						<option value="">公费师范生</option>
+						<option value="">普通师范生</option>
+						<option value="">非师范生</option>
+					</select>
+				</div>
+
+
+				<div class="each_query">
+					<span class="query_text">政治面貌</span>
+					<select class="query_select" id="politicalStand">
+						<option value="-1" selected="selected">请选择</option>
+						<option value="1" selected="selected">中共党员</option>
+						<option value="2" selected="selected">共青团员</option>
+						<option value="3" selected="selected">群众</option>
+					</select>
+				</div>
+				<div class="each_query">
+					<span class="query_text">副书记审核状态</span>
+					<select class="query_select" id="deputySecretaryCheckResult">
+						<option value="-1" selected="selected">请选择</option>
+						<option value="">已审核</option>
+						<option value="">审核未通过</option>
+						<option value="">未审核</option>
+					</select>
+				</div>
+				<div class="each_query">
+					<span class="query_text">就业所在省</span>
+					<select class="query_select" id="provinceId">
+						<option value="-1" selected="selected">请选择</option>
+					</select>
+				</div>
+
+
+				<div class="each_query">
+					<span class="query_text">毕业去向</span>
+					<select class="query_select" id="whereaboutgoId">
+						<option value="-1" selected="selected">请选择</option>
+					</select>
+				</div>
+				<div class="each_query">
+					<span class="query_text">报到证签发类别</span>
+					<select class="query_select" id="reportedModeId">
+						<option value="-1" selected="selected">请选择</option>
+					</select>
+				</div>
+				<div class="each_query major-name origin">
+					<span class="query_text major-label">专业名称</span>
+					<input class="major-id-unit major_code" type="hidden">
+					<input type="text" name="" class="major_input J_majorHolder" id="J_unitMajorHolder">
+					<ul class="none majorFidle" id="J_majorFidle_unit"></ul>
+					<p class="unitTip"></p>
+				</div>
+				<div class="each_query">
+					<span class="query_text">关键字</span>
+					<input type="text" placeholder="学号、身份证号、姓名、考生号" value="" class="keyword_input" id="keyword"/>
+				</div>
+				<!-- <div class="each_query">
+					<span class="query_text">学校审核状态</span>
+					<select class="query_select" id="schoolCheckResult">
+						<option value="-1" selected="selected">请选择</option>
+						<option value="">已审核</option>
+						<option value="">审核未通过</option>
+						<option value="">未审核</option>
+					</select>
+				</div>
+				<div class="each_query addr">
+					<span class="query_text">所在地区</span>
+					<select class="query_select" id="provinceId">
+						<option value="-1" selected="selected">请选择</option>
+					</select>
+				</div>
+				<div class="each_query">
+					<span class="query_text">培养方式</span>
+					<select class="query_select" id="trainingModeCode">
+						<option value="-1" selected="selected">请选择</option>
+						<option value="">定向</option>
+						<option value="">非定向</option>
+						<option value="">委培</option>
+						<option value="">自筹</option>
+					</select>
+				</div>
+
+
+				<div class="each_query">
+					<span class="query_text">是否显示未注册学生</span>
+					<select class="query_select" id="showUncommitted">
+						<option value="-1" selected="selected">否</option>
+						<option value="">是</option>
+					</select>
+				</div> -->
+				<div class="inputs">
+					<input type="button" value="查询" class="query btn" id="querybtn" /><input type="button" value="导出excel" class="excel btn" />
+				</div>
+			</form>
+		</div>
+		<div class="query_result">
+			<table>
+				<thead>
+				    <th>序号</th>
+				    <th style="display:none;">数据库ID</th>
+				    <th>姓名</th>
+				    <th>考生号</th>
+				    <th>学院</th>
+				    <th>专业</th>
+				    <th>签约单位名称</th>
+				    <th>签约单位地址</th>
+				    <th>派遣单位名称</th>
+				    <th>派遣单位地址</th>
+				    <th>操作</th>
+				</thead>
+				<tbody id="J_template">
+
+				</tbody>
+			</table>
+			<div id="J_pagination">
+				<!-- <a href="javascript:;">上一页</a>
+				<a href="javascript:;" class="active">1</a>
+				<a href="javascript:;">2</a>
+				<a href="javascript:;">3</a>
+				<a href="javascript:;">4</a>
+				<a href="javascript:;">5</a>
+				<a href="javascript:;">下一页</a>
+				<span class="show_page">1/5</span> -->
+			</div>
+		</div>
+	</div>
+	<div class="stateBox" style="display:none">
+	    <div class="X">X</div>
+		<table>
+			<tr>
+				<td>级别</td>
+				<td>审核状态</td>
+				<td>审核时间</td>
+				<td>操作人</td>
+			</tr>
+			<tr>
+				<td>辅导员</td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>副书记</td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>学校</td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+	<script id="query-stuInfo" type="text/template">
+	{@each data as stuInfo,index}
+		<tr>
+		    <td class="stuorder">&{++index}</td>
+		    <td style="display:none;" class="stuId">&{stuInfo.stuStatusInfoId}</td>
+		    <td style="display:none;" class="realStuId">&{stuInfo.id}</td>
+		    <td style="display:none;" class="nextStuId">&{stuInfo.nextstuStatusInfoId}</td>
+			<td>&{stuInfo.studentName}</td>
+			<td>&{stuInfo.studentNum}</td>
+			<td>&{stuInfo.studentCollege}</td>
+			<td>&{stuInfo.studentMajor}</td>
+			<td>&{stuInfo.companyName}</td>
+			<td>&{stuInfo.fullAddress}</td>
+			<td>&{stuInfo.dispatchUnitName}</td>
+			<td>&{stuInfo.dispatchUnitAddress}</td>
+			<td>
+				<a href="javascript:;" class="view">查看</a>
+				<a href="javascript:;">修改</a>
+				<a href="javascript:;" class="state">审核状态</a>
+			</td>
+		</tr>
+	{@/each}
+	</script>
+	<script type="text/javascript">
+		KISSY.use('page/admin_page/students_management/dispatch/studentList', function(S) {
+			var urls = PW.Env.url.admin_page.students_management.dispatch.studentList;
+			var url = urls.showStu;//传出来的数据
+			console.log(url);
+			S.ready(function(){
+				PW.page.admin_page.students_management.dispatch.studentList({
+					renderTo: '#J_pagination', //分页显示指向
+					juicerRender: '#query-stuInfo', //模板渲染
+					dataRender: '#J_template', //模板的数据放的地方
+					pageSize:2,//每页显示的记录数
+					url: url,
+					/*发送ajax,必须指定ajax的url */
+					configUrl:function(url,page,me,prevdata){
+						    //var url = url + '/' + page;//套页时使用
+                            return url;
+                            // return url + page;
+                    },
+                    afterDataLoad:function(that,data,page) {
+                    	S.log(data.dataCount);
+                    },
+					type: 'get'
+				});
+				console.log("ajaxing");
+			});
+		});
+	</script>
+</body>
+</html>

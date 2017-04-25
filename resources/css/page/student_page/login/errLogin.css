@@ -1,0 +1,19 @@
+.errLogin{
+	width: 50%;
+	margin: 125px 500px;
+}
+.errLogin h1{
+	font-size: 28px;
+}
+.errLogin p{
+	font-size: 24px;
+}
+.errLogin a{
+	display: inline-block;
+	margin-left: 500px;
+	margin-top: 100px;
+	background: rgb(111, 179, 224) none repeat scroll 0 0;
+    border: 0 none;
+    color: #fff;
+    font-size: 20px;
+}

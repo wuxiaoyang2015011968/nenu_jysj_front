@@ -1,0 +1,380 @@
+ <!-- 学生页面派遣信息修改页 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>修改派遣信息</title>
+	<!--#include file="/nenu_jysj_front/pages/common/link.html"  -->
+	<!--#include file="/nenu_jysj_front/pages/common/script.html"  -->
+	<link rel="stylesheet" type="text/css" href="../../../resources/css/page/student_page/dispatch/alterInfo.css">
+	<link rel="stylesheet" href="../../../resources/upload/css/zyupload-1.0.0.css " type="text/css">
+	<script type="text/javascript" src="../../../resources/upload/js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="../../../resources/upload/js/zyupload-1.0.0.js"></script>
+	<script type="text/javascript" src="../../../resources/js/module/dispatch/del.js"></script>
+</head>
+<body>
+	<!-- 头部start -->
+	<!--#include file="/nenu_jysj_front/pages/common/header.html"  -->
+	<!-- 头部end -->
+	<!-- 主体内容start -->
+	<div class="content">
+	<!-- 侧栏start -->
+	<!--#include file="/nenu_jysj_front/pages/common/Ssidebar.html"  -->
+	<!-- 侧栏end -->
+		<!-- 表单start -->
+			<div class="remind">
+				<p> 请同学们如实填写以下信息。红色字体为必填项，黑色字体为选填项。</p>
+				<p>你的协议编号为：<span>XXXXXXXXXXXX</span></p>
+			</div>      
+			<form action="" class="block form">
+				<h1>就业信息</h1>
+					<!-- 就业信息表单start -->
+					<div class="block-content officeMsg clearfix">
+						<div class="control-area control-area-short required">
+							<label for="">毕业去向</label>
+							<select name="whereaboutgoId" class="textTheme J_notOption" id="select-change2">
+								<option value="-1">请选择</option>
+								<option value="1">签就业协议形式就业</option>
+								<option value="2">签劳动合同形式就业</option>
+								<option value="3">其他录用方式形式就业</option>
+								<option value="4">科研助理</option>
+								<option value="5">国家基层项目</option>
+								<option value="6">地方基层项目</option>
+								<option value="7">应征义务兵</option>
+								<option value="8">待就业</option>
+								<option value="9">其他暂不就业</option>
+								<option value="10">不就业拟升学</option>
+								<option value="11">其他暂不就业</option>
+								<option value="12">自主创业</option>
+								<option value="13">自由职业</option>
+								<option value="14">升学，出国出境</option>
+							</select>
+							<a  class="tip hint graduation-hint" href="javascript:;">提示</a>						
+						</div>
+						<div class="control-area control-area-short required">
+							<label for="">签约单位名称</label>
+							<input type="text" name="companyName" class="textTheme J_notNull"/>
+							<a class="tip hint unit-hint" href="javascript:;">提示</a>	
+						</div>	
+						<div class="control-area control-area-short required">
+							<label for="">单位组织机构代码</label>
+							<input type="text" name="organizationCode" class="textTheme J_notNull"/>
+							<a class="tip hint code-hint" href="javascript:;">提示</a>
+						</div>
+						<div class="control-area control-area-short required">
+							<label for="">单位所在地</label>
+							<input class="area-id-unit" type="hidden" name="cityId">
+							<input id="J_unitAreaHolder" class="textTheme J_areaHolder J_notNull" type="text" autocomplete="off" data-valid-rule="notNull"/>
+							<ul class="none areaFidle" id="J_areaFidle_unit"></ul>
+							<p></p>
+						</div>
+						<div class="control-area control-area-short required">
+							<label for="">地区代码</label>
+							<input type="text" class="unit-code J_unit_code textTheme" onfocus="this.blur()" value="000000"/>
+						</div> 
+						<div class="control-area control-area-short required">
+							<label for="">单位性质</label>
+							<select name="propertyId" class="textTheme J_notOption">
+								<option value="-1">请选择</option>
+								<option value="1">啦啦啦</option>
+							</select>
+						</div>
+						<div class="control-area control-area-short required">
+							<label for="">单位行业</label>
+							<select name="tradeId" class="textTheme J_notOption">
+								<option value="-1">请选择</option>
+								<option value="1">啦啦啦</option>
+
+							</select>
+						</div>
+						<div class="control-area control-area-short">
+							<label for="">单位隶属部门</label>
+							<input type="text" name="subordinateDepartment" class="textTheme"/>
+						</div>	
+						<div class="control-area control-area-short required">
+							<label for="">工作职位类别</label>
+							<select name="jobId"  class="textTheme J_notOption">
+								<option value="-1">请选择</option>
+								<option value="1">啦啦啦</option>
+
+							</select>
+						</div>
+						<div class="control-area control-area-short">
+							<label for="">单位地址</label>
+							<input type="text" name="fullAddress" class="textTheme"/>
+						</div>
+						<div class="control-area control-area-short postcode-one clear">
+							<label for="">单位邮编</label>
+							<input type="text" name="companyPostcode" class="textTheme"/>
+							<span class="valid-tip"></span>
+						</div>
+						<div class="control-area control-area-short">
+							<label for="">单位联系人</label>
+							<input type="text" name="companyContactPerson" class="textTheme"/>
+						</div>
+						<div class="control-area control-area-short fax clear">
+							<label for="">单位联系人传真</label>
+							<input type="text" name="contactPersonFax" class="textTheme"/>
+							<span class="valid-tip"></span>
+						</div>
+						<div class="control-area control-area-short clear phone-one">
+							<label for="">单位联系人电话</label>
+							<input type="text" name="contactPersonTele" class="textTheme"/>
+							<span class="valid-tip"></span>
+						</div>
+						<div class="control-area control-area-short clear mobile-phone">
+							<label for="">单位联系人手机</label>
+							<input type="text" name="contactPersonMobile" class="textTheme"/>
+							<span class="valid-tip"></span>
+						</div>
+						<div class="control-area control-area-short email clear">
+							<label for="">单位联系人电子邮箱</label>
+							<input type="text" name="contactPersonEmail"  class="textTheme"/>
+							<span class="valid-tip"></span>
+						</div>
+					</div>
+					<!-- 就业信息表单end -->			
+					<h1>派遣信息</h1>
+					<!-- 派遣信息表单start -->		
+					<div class="block-content jobMsg clearfix">
+						<div class="control-area control-area-short required">
+							<label for="">报到证发放类别</label>
+							<select id="" name="reportModeId"  class="textTheme certificateKind J_notOption">
+								<option value="1">去就业地报道</option>
+								<option value="2">回生源地报道</option>
+								<option value="3">去代理/托管地报道</option>
+								<option value="6">未签发报到证</option>
+							</select>
+							<a class="tip hint type-hint" href="javascript:;">提示</a>
+						</div>
+						<div class="control-area control-area-short required ">
+							<label for="">报到证迁往单位名称</label>
+							<input type="text"  name="reportCompany" class="textTheme"/>
+						</div>	
+						<div class="control-area control-area-short required">
+							<label for="">是否接受档案</label>
+							<span class="h">否</span>
+							<input type="radio" name="acceptFile"class="radio textTheme" value="0" />
+							<span class="h">是</span>
+							<input type="radio" name="acceptFile" class="radio textTheme" value="1" checked="checked" />
+						</div>
+						<div class="control-area control-area-short">
+							<label for="">档案转寄单位位名称</label>
+							<input type="text"  name="fileCompany" class="textTheme"/>
+						</div>	
+						<div class="control-area control-area-short postcode-two clear">
+							<label for="">档案转寄单位邮编</label>
+							<input type="text" name="fileCompanyPostcode" class="textTheme">
+							<span class="valid-tip"></span></input>
+						</div>	
+						<div class="control-area control-area-short">
+							<label for="">档案接受部门</label>
+							<input type="text" name="acceptFileDepartment" class="textTheme"/>
+						</div>	
+						<div class="control-area control-area-short">
+							<label for="">档案接受联系人</label>
+							<input type="text"  name="acceptFilePerson" class="textTheme"/>
+						</div>
+						<div class="control-area control-area-short phone-two clear">
+							<label for="">档案接受联系人电话</label>
+							<input type="text" name="acceptFileTele" class="textTheme"/>
+							<span class="valid-tip"></span>
+						</div>
+						<div class="control-area control-area-short required ">
+							<label for="">是否接受户口</label>
+							<span class="h">否</span>
+							<input type="radio" name="acceptHukou" class="radio" class="textTheme" value="0" />
+							<span class="h">是</span>
+							<input type="radio" name="acceptHukou" class="radio" class="textTheme" value="1" checked="checked"/>
+						</div>
+						<!-- <div class="place-tip">（提示：您已经跨省，定向生、免费师范生生源地与派遣地不同）</div> -->
+						<div class="control-area control-area-short required">
+							<label for="">报到证迁往单位所在地</label>
+							<input class="area-id-local" type="hidden" name="areaId">
+							<input type="text" name="reportCompanyAddress" autocomplete="off" class="textTheme J_areaHolder J_notNull" id="J_localAreaHolder" />
+							<ul class="none areaFidle" id="J_areaFidle_local"></ul>
+							<p></p>
+						</div>
+						<div class="control-area control-area-short required">
+							<label for="">地区代码</label>
+							<input type="text" class="unit-code J_unit_code textTheme" onfocus="this.blur()" value="000000" />
+						</div>
+						<div class="control-area control-area-short">
+							<label for="">户口迁往地址</label>
+							<input type="text"  name="hukouTransferAddress" class="textTheme"/>
+							<span class="valid-tip"></span>
+						</div>
+						<div class="control-area control-area-short">
+							<label for="">档案转寄单位所在地</label>
+							<input class="area-id-local" type="hidden" name="areaId">
+							<input type="text" name="fileompanyAddress" autocomplete="off" class="textTheme J_areaHolder" id="J_localAreaHolder"/>
+							<ul class="none areaFidle" id="J_areaFidle_local"></ul>
+							<p></p>
+						</div>
+						<div class="control-area control-area-short">
+							<label for="">地区代码</label>
+							<input type="text" class="unit-code J_unit_code textTheme" onfocus="this.blur()" value="000000" />
+						</div>    
+					</div>
+					<!-- 派遣信息表单end -->
+					<h1>材料信息</h1>
+					<!-- 材料信息表单start -->		
+					<div class="block-content clearfix">
+						<ul class="clearfix material">
+							<li>
+								<img src="../../../resources/img/student_page/dispatch/1.jpg" alt="1.jpg"  class="J_thumbnail uploaded-img" title="点击图片可放大预览" />
+								<input type="text" style="display:none;width:136px;"  maxlength="12" value="">
+								<a href="javascript:;" class="delete"></a>
+							</li>
+							<li>
+								<img src="../../../resources/img/student_page/dispatch/2.jpg" alt="2.jpg" class="J_thumbnail uploaded-img" title="点击图片可放大预览"/>
+								<input type="text" style="display:none;width:136px;" maxlength="12"  value="">
+								<a href="javascript:;" class="delete"></a>
+							</li>
+						</ul>
+						<div id="zyupload" class="zyupload"></div> 
+					</div>
+					<!-- 材料信息表单end -->
+					<!-- 提示框内容start -->
+					<div class="scene none"></div>
+					<div class="hint-box change none">
+						<div class="hint-info clearfix">提示信息
+							<span class="close">X</span>
+						</div>
+						<div class="msg_box msg-box">
+							<p class="msg"></p>
+							<p class="hint1"></p>
+							<p class="hint2"></p>
+							<p class="hint3"></p>
+						</div>
+						
+						<span class="close-button close">关闭</span>
+					</div>
+					<div class="delete-box  none">
+						<div class="delete-info clearfix">
+							<p>确认要删除此图片吗？</p>
+							<span class="close">X</span>
+						</div>
+						<span class="close-button confirm">确认</span>						
+						<span class="close-button close">取消</span>
+					</div>
+					<div class="pop-pic none J_pop_pic">
+						<img src=""/>
+						<a href="javascript:;" class="J_shut">关闭</a>
+					</div>
+					<!-- 提示框内容end -->
+					<input type="checkbox" name="agree" class="agree"/>
+					<span class="span-agree">同意将以上信息作为本人毕业派遣信息依据，并上传至省就业派遣系统</span><br>
+					<input type="checkbox" name="agree" class="agree"/>
+					<span class="span-agree">确认所传材料为所需材料类型<span class="hint look-hint"><a href="javascript:;" class="look-state">查看说明</a></span> </span><br>
+					<input type="submit" class="submit" name="" value="下一步"/>
+			</form>
+		<!-- 表单end -->
+	</div>
+	<!-- 主题内容end -->
+	<script type="text/javascript">
+		$("#select-change2").change(function(){
+			
+			var valueName = $(this).find("option:selected").val();
+			if(valueName==1||valueName==2||valueName==3){
+				$(".officeMsg").children("div").removeClass('required')
+				.children("input").removeClass('J_notNull');
+				$(".officeMsg").children().children("select").removeClass('J_notOption');
+				$(".officeMsg .control-area:nth-child(1)").addClass('required').find("select").addClass('J_notOption');
+				$(".officeMsg .control-area:nth-child(2)").addClass('required').find("input").addClass('J_notNull');
+				$(".officeMsg .control-area:nth-child(3)").addClass('required').find("input").addClass('J_notNull');
+				$(".officeMsg .control-area:nth-child(4)").addClass('required').find("input").addClass('J_notNull');
+				$(".officeMsg .control-area:nth-child(6)").addClass('required').find("select").addClass('J_notOption');
+				$(".officeMsg .control-area:nth-child(7)").addClass('required').find("select").addClass('J_notOption');
+				$(".officeMsg .control-area:nth-child(9)").addClass('required').find("select").addClass('J_notOption');
+			}
+			else if(valueName==4||valueName==5||valueName==6||valueName==13){
+				$(".officeMsg").children("div").removeClass('required')
+				.children("input").removeClass('J_notNull');
+				$(".officeMsg").children().children("select").removeClass('J_notOption');
+				$(".officeMsg .control-area:nth-child(1)").addClass('required').find("select").addClass('J_notOption');
+				$(".officeMsg .control-area:nth-child(2)").addClass('required').find("input").addClass('J_notNull');
+				$(".officeMsg .control-area:nth-child(4)").addClass('required').find("input").addClass('J_notNull');
+			}
+			else if(valueName==12){
+				$(".officeMsg").children("div").removeClass('required')
+				.children("input").removeClass('J_notNull');
+				$(".officeMsg").children().children("select").removeClass('J_notOption');
+				$(".officeMsg .control-area:nth-child(1)").addClass('required').find("select").addClass('J_notOption');
+				$(".officeMsg .control-area:nth-child(2)").addClass('required').find("input").addClass('J_notNull');
+				$(".officeMsg .control-area:nth-child(4)").addClass('required').find("input").addClass('J_notNull');
+				$(".officeMsg .control-area:nth-child(7)").addClass('required').find("select").addClass('J_notOption');
+			}
+			else if(valueName==14){
+				$(".officeMsg").children("div").removeClass('required')
+				.children("input").removeClass('J_notNull');
+				$(".officeMsg").children().children("select").removeClass('J_notOption');
+				$(".officeMsg .control-area:nth-child(1)").addClass('required').find("select").addClass('J_notOption');
+				$(".officeMsg .control-area:nth-child(2)").addClass('required').find("input").addClass('J_notNull');
+			}
+			else{
+				$(".officeMsg").children("div").removeClass('required')
+				.children("input").removeClass('J_notNull');
+				$(".officeMsg").children().children("select").removeClass('J_notOption');
+				$(".officeMsg .control-area:nth-child(1)").addClass('required').find("select").addClass('J_notOption');
+			}
+		})
+	</script>
+	<script type="text/javascript">
+		KISSY.use('page/student_page/dispatch/alterInfo',function(S){
+			S.ready(function(){
+				PW.page.student_page.dispatch.alterInfo();
+			})
+		});
+		KISSY.use('module/sidebar',function(S){
+			S.ready(function(){
+				PW.module.Sidebar();
+			});
+		});
+	</script>
+	<script>
+	$(function(){
+			// 初始化插件
+			$("#zyupload").zyUpload({
+				width            :   "100%",                 // 宽度
+				height           :   "350px",                 // 宽度
+				itemWidth        :   "140px",                 // 文件项的宽度
+				itemHeight       :   "115px",                 // 文件项的高度
+				url              :   "/student/dispatch/ajax/upload",  // 上传文件的路径
+				fileType         :   ["jpg","png","jpeg","bmp"],// 上传文件的类型
+				fileSize         :   5120000,                // 上传文件的大小
+				multiple         :   true,                    // 是否可以多个文件上传
+				dragDrop         :   true,                    // 是否可以拖动上传文件
+				tailor           :   true,                    // 是否可以裁剪图片
+				del              :   true,                    // 是否可以删除文件
+				finishDel        :   false,  				  // 是否在上传文件完成后删除预览
+				/* 外部获得的回调接口 */
+				onSelect: function(selectFiles, allFiles){    // 选择文件的回调方法  selectFile:当前选中的文件  allFiles:还没上传的全部文件
+					console.info("当前选择了以下文件：");
+					console.info(selectFiles);
+				},
+				onDelete: function(file, files){              // 删除一个文件的回调方法 file:当前删除的文件  files:删除之后的文件
+					console.info("当前删除了此文件：");
+					console.info(file.name);
+				},
+				onSuccess: function(file, response){          // 文件上传成功的回调方法
+					console.info("此文件上传成功：");
+					console.info(file.name);
+					console.info("此文件上传到服务器地址：");
+					console.info(response);
+					$("#uploadInf").append("<p>上传成功</p>");
+				},
+				onFailure: function(file, response){          // 文件上传失败的回调方法
+					console.info("此文件上传失败：");
+					console.info(file.name);
+				},
+				onComplete: function(response){           	  // 上传完成的回调方法
+					console.info("文件上传完成");
+					console.info(response);
+				}
+			});
+			
+		});
+</script>
+</body>
+</html>
